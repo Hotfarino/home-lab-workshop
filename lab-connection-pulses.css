@@ -1,0 +1,16 @@
+/* Pulses show availability, not literal AC waveforms or measured packets. */
+.connection-pulse{fill:none;stroke-width:5;stroke-linecap:round;stroke-linejoin:round;stroke-dasharray:3 18;stroke-dashoffset:0;pointer-events:none;animation:connectionStatusFlow 2.4s linear infinite;opacity:1}
+.connection-pulse.power-pulse{stroke:#00bd72;filter:drop-shadow(0 0 3px #00ad64)}
+.connection-pulse.data-pulse{stroke:#168cff;filter:drop-shadow(0 0 3px #007aff)}
+.scene #wires .wire.power-available{stroke:#286751;stroke-dasharray:none;animation:none}
+.scene #wires .wire.flowing,.hardware-stage .physical-wire.traffic-path{stroke-dasharray:none!important;animation:none!important}
+.scene #wires .wire.flowing.data-link-ready{stroke:#1268df!important;filter:none}
+.hardware-stage .physical-wire.power-available{stroke:#286751}
+.hardware-stage .physical-wire.traffic-path.data-link-ready{stroke:#2b80d8}
+.connection-pulse-legend{display:flex;align-items:center;flex-wrap:wrap;gap:6px 18px;margin-top:9px;font-size:12px;line-height:1.5;color:#345467}
+.connection-pulse-legend span{display:inline-flex;align-items:center;gap:6px}
+.connection-pulse-legend i{display:inline-block;width:20px;height:4px;border-radius:4px;background:#007bbd}
+.connection-pulse-legend .power-status-key{background:#009c5d}.connection-pulse-legend .data-status-key{background:#168cff}
+@keyframes connectionStatusFlow{to{stroke-dashoffset:-42}}
+.lab-reduce-motion .connection-pulse{display:none}
+@media(prefers-reduced-motion:reduce){.connection-pulse{animation:none;stroke-dasharray:none;stroke-width:2.5;opacity:.85;filter:none}}

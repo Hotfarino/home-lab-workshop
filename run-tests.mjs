@@ -1,0 +1,5 @@
+import {spawnSync} from 'node:child_process';
+// Run engine first: it creates the portable-save fixture used by later suites.
+const tests=["test-lab", "test-lab-bench-connections", "test-lab-blender", "test-lab-browsers", "test-lab-cable-routing", "test-lab-connection-pulses", "test-lab-courses", "test-lab-desktop", "test-lab-education", "test-lab-equipment-actions", "test-lab-hardware", "test-lab-laptop-config", "test-lab-laptop-courses", "test-lab-learning", "test-lab-model3d", "test-lab-network", "test-lab-os-admin", "test-lab-presentation", "test-lab-rack-direct", "test-lab-recovery", "test-lab-return", "test-lab-save", "test-lab-screen", "test-lab-studio", "test-lab-surge-vm", "test-lab-ui", "test-lab-ux", "test-lab-world", "test-lab-world-routing", "test-raid"];
+for(const test of tests){console.log('\n'+test);const result=spawnSync(process.execPath,[test+'.mjs'],{stdio:'inherit',timeout:90000});if(result.error)throw result.error;if(result.status!==0)process.exit(result.status||1);}
+console.log('\nAll '+tests.length+' Home Lab suites passed.');

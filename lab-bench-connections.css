@@ -1,0 +1,58 @@
+/* The photograph and its hit targets occupy the same coordinate system. */
+.wall-outlet-plane{position:absolute;inset:0 0 auto;width:100%;aspect-ratio:1672/941;pointer-events:none;z-index:6}
+.scene.bench{background-color:#5689a4}
+.scene .physical-device{width:220px;padding:0;background:transparent;border:0;box-shadow:none;border-radius:0;isolation:isolate}
+.scene .physical-device:hover{background:transparent;box-shadow:none}
+.scene .physical-device.selected{outline:0}
+.physical-device.selected .bench-device-caption{outline:2px solid #138ddd;outline-offset:3px}
+.bench-device-face{position:relative;width:220px;height:220px;pointer-events:none}
+.bench-device-photo{position:absolute;inset:0;width:100%;height:100%;padding:0;border:0;border-radius:0;background-image:url('lab-physical-equipment.jpg')!important;background-size:300% 400%!important;background-repeat:no-repeat!important;mix-blend-mode:multiply;cursor:grab;pointer-events:auto;box-shadow:none!important}
+.bench-device-photo:hover,.bench-device-photo:active{background-color:transparent;border:0}
+.bench-device-caption{display:flex;align-items:center;justify-content:space-between;gap:8px;border-radius:9px;padding:5px 9px;background:#fffffff0;box-shadow:0 3px 10px #12354920;min-height:38px}
+.bench-device-caption>b{font-size:13px;font-weight:700;line-height:1.25;color:#142f44}
+.bench-power{display:flex;gap:5px;align-items:center;padding:3px 6px;min-height:28px;font-size:20px;background:#edf1f4;border:1px solid #778a99;border-radius:7px;color:#495b65}
+.bench-power span{font-size:10px;font-weight:800;pointer-events:none}
+.bench-power.is-on{color:#026445;background:#c7ffe3;border-color:#16a56e;box-shadow:0 0 9px #27ee9866}
+.bench-loose-cord{display:flex;align-items:center;justify-content:center;gap:5px;width:100%;height:46px;margin:0;padding:0 4px;border:0;border-radius:0;background:transparent;color:#263540;cursor:grab;touch-action:none}
+.bench-loose-cord:hover{background:#e7f6ff88;border:0}.bench-loose-cord svg{width:76px;height:40px;flex:none;pointer-events:none;filter:drop-shadow(0 3px 2px #10243433)}
+.bench-loose-cord>span{font-size:12px;padding:4px 6px;border-radius:6px;background:#fffffff0;color:#183f58;font-weight:700}
+.resting-cord{position:absolute;inset:0;width:100%;height:100%;overflow:visible;pointer-events:none;z-index:4}.resting-cord path{fill:none;stroke:#293641;stroke-width:1.6;filter:drop-shadow(0 1px 1px #10283f55)}
+.bench-screen-glow{position:absolute;inset:0;pointer-events:none;background:linear-gradient(145deg,#25a3ee,#162e78);clip-path:polygon(6.4% 15.2%,28.7% 23.8%,39.8% 62.4%,20.7% 71%);opacity:1}
+.bench-socket{position:absolute;transform:translate(-50%,-50%);width:22px;height:22px;min-width:0;min-height:0;padding:0;background:transparent!important;border:1px solid #77b9ee88!important;border-radius:4px;box-shadow:none!important;pointer-events:auto;touch-action:none;cursor:crosshair;z-index:6;overflow:visible}
+.bench-socket.powerIn{border-radius:50%;width:23px;height:23px}.bench-socket.powerOut{width:24px;height:28px}.bench-socket.wall-socket{width:2.2%;height:4%;min-width:18px;min-height:20px;border-radius:40%}
+.bench-socket:hover,.bench-socket:focus-visible{outline:2px solid #ffb52b!important;outline-offset:2px;background:#e0f6ff55!important;z-index:12}
+.bench-socket-label{position:absolute;bottom:calc(100% + 5px);left:50%;transform:translateX(-50%);width:max-content;max-width:100px;white-space:nowrap;background:#f8fdffed;border:1px solid #a6cbe1;border-radius:4px;padding:2px 4px;color:#17466a;font:700 9px/1.3 ui-monospace,monospace;box-shadow:0 1px 3px #14334222;pointer-events:none}
+.equipment-switch .bench-socket-label,.equipment-pdu .bench-socket-label,.equipment-surge .bench-socket-label{opacity:0}
+.bench-socket:hover .bench-socket-label,.bench-socket:focus-visible .bench-socket-label{opacity:1!important;font-size:12px;z-index:20}
+.hide-bench-labels .bench-socket-label{opacity:0}
+.bench-fit{outline:2px solid #168bd5!important;outline-offset:3px;background:#83d8ff22!important}
+.bench-source{outline:2px solid #edb43f!important;outline-offset:3px}
+.bench-drop-fit{outline:3px solid #00ba82!important;outline-offset:5px;background:#8ef9d566!important}
+.bench-drop-error{outline:3px solid #e6574c!important;outline-offset:4px}
+.bench-seated-plug{position:absolute;inset:15% 18% -35%;border-radius:3px;background:linear-gradient(90deg,#1d83bd,#5bbbdf,#186895);border:1px solid #155675;box-shadow:0 3px 4px #10233466;pointer-events:none}
+.bench-seated-plug:after{content:'';position:absolute;left:35%;top:85%;width:30%;height:12px;background:#187aad;border-radius:3px}
+.bench-seated-plug.power{background:linear-gradient(90deg,#1c2831,#576571,#1e2c36);border-color:#18252f}.bench-seated-plug.power:after{background:#293842}
+.bench-seated-plug.sc,.bench-seated-plug.lc{background:#4faf6b;border-color:#147137}.bench-seated-plug.sc:after,.bench-seated-plug.lc:after{background:#dfb540}
+.bench-link-led{position:absolute;right:-5px;bottom:-3px;width:5px;height:5px;border-radius:50%;background:#586b6c;pointer-events:none}.socket-live .bench-link-led{background:#31fa98;box-shadow:0 0 6px #00ff88}
+.wall-socket .bench-link-led{display:none}.wall-outlet-plane .bench-socket-label{font-size:10px}
+.bench-snap .bench-seated-plug{animation:bench-seat .25s ease-out}@keyframes bench-seat{from{transform:translateY(12px);opacity:.4}to{transform:none;opacity:1}}
+.physical-wall-panel{position:absolute;transform:translate(-50%,-50%);width:130px;background:#f5f3ef;border:1px solid #b1b8bb;border-radius:8px;box-shadow:0 5px 8px #24394b33;padding:8px;z-index:5}.physical-wall-panel>b{font-size:13px}.physical-wall-panel>div{position:relative;height:105px}.physical-wall-panel .wall-socket{width:32px;height:35px;background:#e7e5df!important;border:2px solid #a6acae!important}
+.scene #wires{z-index:4}.scene #wires .wire{stroke-width:4;filter:drop-shadow(0 3px 2px #11263855)}
+.scene #wires .wire.power{stroke:#273743;stroke-width:5}
+.bench-connection-tools{margin:12px 0;border:1px solid #bcd6e8;border-radius:13px;background:white;padding:12px;color:#234155}
+.bench-cable-controls{display:flex;flex-wrap:wrap;gap:10px;align-items:end}.bench-cable-controls label{font-size:13px;display:grid;gap:4px;min-width:0}.bench-cable-controls label:first-child{flex:1;min-width:190px}.bench-cable-controls select{width:100%;min-width:0}.bench-cable-controls input{width:82px}.bench-cable-controls button{min-height:40px;font-size:13px}
+.bench-connection-status{font-size:14px;line-height:1.5;margin-top:10px;padding:10px 12px;background:#eff9f5;border-radius:8px;color:#235a45;overflow-wrap:anywhere}.bench-connection-status.error{background:#fff1ef;color:#8d2925}
+#benchConnectionAction:empty{display:none}#benchConnectionAction>button{margin-top:9px;background:#126aca;color:white;max-width:100%;white-space:normal}
+#benchDraggingCord{position:fixed;inset:0;width:100vw;height:100vh;overflow:visible;pointer-events:none;z-index:90}
+.bench-cable-dragging,.bench-cable-dragging *{cursor:grabbing!important;user-select:none}.bench-cable-dragging .bench-loose-cord{opacity:.4}
+.drag-ghost .bench-device-face{width:220px;height:220px}.drag-ghost:has(.bench-device-face){width:238px;background:transparent;border:0;box-shadow:none}.drag-ghost .bench-socket{pointer-events:none}
+@media(prefers-reduced-motion:reduce){.bench-snap .bench-seated-plug{animation:none}}
+@media(max-width:780px){.bench-connection-tools{padding:10px}.bench-cable-controls{gap:8px}.bench-cable-controls label:first-child{flex-basis:calc(100% - 92px);min-width:150px}.bench-cable-controls button{flex:1}.scene .physical-device{width:220px}}
+
+.scene .physical-device{isolation:auto;mix-blend-mode:multiply}.bench-device-photo{mix-blend-mode:normal}.physical-device .bench-device-caption{box-shadow:none}.scene .equipment-isp{width:100px}.equipment-isp .bench-device-face{width:100px;height:100px}.equipment-isp .bench-device-caption{min-height:24px;padding:3px 6px}.equipment-isp .bench-device-caption>b{font-size:11px}
+
+.scene .physical-device{transform:none;margin-left:-110px;margin-top:-153px;height:306px;isolation:auto;mix-blend-mode:normal;z-index:auto}.bench-device-photo{mix-blend-mode:multiply}.scene .equipment-isp{margin-left:-50px;margin-top:-62px;height:124px}.bench-device-caption{position:relative;z-index:3}.bench-loose-cord{position:relative;z-index:3}
+
+#benchConnectionAction,#benchConnectionAction:empty{display:block;min-height:46px}.bench-connection-status{height:64px;overflow:auto}.equipment-laptop .copper .bench-socket-label{bottom:auto;top:calc(100% + 5px)}@media(max-width:780px){.bench-connection-status{height:100px}}
+
+.bench-rocker{position:absolute;left:12.5%;top:40.8%;width:8%;height:13%;z-index:7;padding:0;background:#a91f20;border:1px solid #e67a73;border-radius:3px;pointer-events:auto;box-shadow:inset 1px -3px 3px #490d15;cursor:pointer}.bench-rocker.is-on{background:#ee5745;box-shadow:0 0 8px #ff6d47,inset 0 2px 2px #ffac8d}.bench-rocker:focus-visible{outline:3px solid #168bd5;outline-offset:3px}

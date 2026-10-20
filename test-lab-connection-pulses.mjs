@@ -1,0 +1,38 @@
+import assert from 'node:assert/strict';
+import {parseHTML} from 'linkedom';
+import * as E from './lab-engine.js';
+import {portState} from './lab-hardware.js';
+import {connectionStatus,refreshConnectionPulses} from './lab-connection-pulses.js';
+import {buildTemplate} from './lab-planner.js';
+const state=E.fresh(),laptop=E.addDevice(state,'laptop').id;
+E.connect(state,laptop,'ac','wall','out1','power',6);
+const cord=state.links[0],status=(s,l)=>connectionStatus(s,l,portState);
+assert.equal(status(state,cord).live,true,'Energized cord can supply a device that is still switched off');
+assert.equal(E.powered(state,laptop),false);
+state.outage=true;assert.equal(status(state,cord).live,false);state.outage=false;
+cord.broken=true;assert.equal(status(state,cord).live,false);cord.broken=false;
+let s=buildTemplate('vm');s.lastTest=null;
+const client=E.ofType(s,'laptop')[0],sw=E.ofType(s,'switch')[0],host=E.ofType(s,'server')[0];
+const data=s.links.find(l=>l.type!=='power'&&(l.a===client.id||l.b===client.id));
+assert.equal(status(s,data).live,true,'No successful traffic test is needed');
+E.ofType(s,'router')[0].router.dns='192.168.50.250';
+assert.equal(E.test(s,client.id).ok,false);assert.equal(status(s,data).live,true,'DNS failure does not change physical link availability');
+sw.on=false;assert.equal(status(s,data).live,false);sw.on=true;
+data.broken=true;assert.equal(status(s,data).live,false);data.broken=false;
+const {document}=parseHTML('<svg id="wires"></svg>'),svg=document.getElementById('wires');
+function draw(){svg.innerHTML=s.links.map(l=>`<path data-link="${l.id}" class="wire ${l.type==='power'?'power':''}" d="M0 0 L100 0"/>`).join('');refreshConnectionPulses(svg,s,portState);}
+draw();
+assert.ok(svg.querySelectorAll('.power-pulse').length>0);assert.ok(svg.querySelectorAll('.data-pulse').length>0);
+assert.equal(svg.querySelectorAll('.connection-pulse').length,s.links.filter(l=>status(s,l).live).length);
+const count=svg.querySelectorAll('.connection-pulse').length;
+for(let i=0;i<20;i++)refreshConnectionPulses(svg,s,portState);
+assert.equal(svg.querySelectorAll('.connection-pulse').length,count,'Refresh neither expires nor duplicates pulses');
+const path=svg.querySelector(`.wire[data-link="${data.id}"]`);path.classList.add('cable-muted');refreshConnectionPulses(svg,s,portState);
+assert.ok(svg.querySelector(`.connection-pulse[data-link="${data.id}"]`).classList.contains('cable-muted'),'Cable tracing also dims its status pulse');
+s.links=s.links.filter(l=>l.id!==data.id);refreshConnectionPulses(svg,s,portState);assert.equal(svg.querySelector(`.connection-pulse[data-link="${data.id}"]`),null,'Disconnected routes lose their pulse');
+// Changed SFP hardware must invalidate an existing cable, including passive panel chains.
+host.nic='10g';sw.sr=host.sr=true;assert.ok(E.connect(s,sw.id,'sfp',host.id,'sfp','lc',6).ok);
+const optical=s.links.at(-1);assert.equal(status(s,optical).live,true);host.sr=false;assert.equal(status(s,optical).live,false);
+assert.equal(portState(s,host.id,'sfp').live,false,'Link LEDs and status pulses agree');
+host.sr=true;optical.length=2000;assert.equal(status(s,optical).live,false);
+console.log('PASS: continuous power/data eligibility without tests, switched-off loads, outages, damage, source switches, DNS distinction, optical module/length validation, trace dimming, disconnects and duplicate-free refresh.');

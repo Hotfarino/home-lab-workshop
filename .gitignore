@@ -1,0 +1,6 @@
+node_modules/
+dist/
+.DS_Store
+*.build-tmp
+__pycache__/
+test-results/home-lab-demo.json

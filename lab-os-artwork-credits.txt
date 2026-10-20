@@ -1,0 +1,56 @@
+HOME LAB WORKSHOP — DESKTOP ARTWORK AND INTERFACE REFERENCES
+
+Independent educational interface recreation. Microsoft, Windows, Ubuntu,
+Canonical, and CompTIA names identify products or learning topics. No affiliation
+or endorsement is implied. No operating system kernel is executed here.
+
+WINDOWS 11 BLOOM
+File: lab-wallpaper-windows-bloom.jpg (unmodified JPEG)
+Artwork: Microsoft / Six N Five. All rights remain with the respective owners.
+This is not claimed to be an openly licensed asset.
+Official source page:
+https://news.microsoft.com/windows11-general-availability/
+Windows 11 Bloom Screensaver / Print:
+https://msftstories.thesourcemediaassets.com/sites/620/2021/09/Windows-11-Bloom-Screensaver-Light-1.jpg
+
+UBUNTU 24.04 DEFAULT WALLPAPER
+File: lab-wallpaper-ubuntu.jpg
+Source: warty-final-ubuntu.png in ubuntu-wallpapers 24.04.2.
+Canonical Ltd. Packaged attribution/license: lab-ubuntu-wallpaper-license.txt.
+License: Creative Commons Attribution-ShareAlike 4.0 International.
+https://creativecommons.org/licenses/by-sa/4.0/
+Only format conversion from PNG to JPEG (quality 90); no artwork edits.
+https://archive.ubuntu.com/ubuntu/pool/main/u/ubuntu-wallpapers/ubuntu-wallpapers_24.04.2_all.deb
+
+YARU APPLICATION ICONS
+Files: lab-yaru-files.png, lab-yaru-folder.png, lab-yaru-terminal.png,
+lab-yaru-settings.png, lab-yaru-browser.png.
+Yaru contributors. Unmodified PNGs from Yaru 24.04.2.
+License: Creative Commons Attribution-ShareAlike 4.0 International.
+License and authors: lab-yaru-license.txt, lab-yaru-authors.txt.
+https://github.com/ubuntu/yaru/tree/24.04.2
+Source paths under icons/Yaru/48x48/:
+ apps/filemanager-app.png
+ places/folder.png
+ apps/terminal-app.png
+ apps/system-settings.png
+ apps/webbrowser-app.png
+Browser icon is a generic browser globe, not Firefox.
+Other small interface glyphs are original vectors authored for the simulator.
+
+PRIMARY INTERFACE REFERENCES
+Microsoft Windows taskbar:
+https://support.microsoft.com/en-us/windows/experience/personalization/customize-the-taskbar-in-windows
+Microsoft Windows Terminal appearance (Campbell, Cascadia Mono, padding):
+https://learn.microsoft.com/en-us/windows/terminal/customize-settings/profile-appearance
+https://learn.microsoft.com/en-us/windows/terminal/customize-settings/color-schemes
+Windows network settings:
+https://support.microsoft.com/en-us/windows/experience/connectivity-networking/essential-network-settings-and-tasks-in-windows
+Ubuntu 24.04 / GNOME 46:
+https://ubuntu.com/blog/ubuntu-desktop-24-04-noble-numbat-deep-dive
+GNOME workspace indicator:
+https://release.gnome.org/45/
+GNOME Terminal:
+https://help.gnome.org/gnome-terminal/
+
+Edition 41: Chrome and Firefox identification icons are simplified inline vector redraws. Product names identify the independently recreated practice interfaces; no affiliation or endorsement is implied. Browser navigation uses the simulator’s own code and modeled responses, not the vendors’ browser engines.

@@ -1,0 +1,16 @@
+import assert from 'node:assert/strict';
+import * as E from './lab-engine.js';
+import {moveCableEnd,mountWithSupport,rackCheck,unmountToBench} from './lab-direct-actions.js';
+import {renderNetworkRack,rackPosition} from './lab-rack.js';
+import {renderBenchEquipment} from './lab-bench-connections.js';
+const s=E.fresh(),server=E.addDevice(s,'server').id,sw=E.addDevice(s,'switch').id,ups=E.addDevice(s,'ups').id,laptop=E.addDevice(s,'laptop').id;
+assert.equal(mountWithSupport(s,server,4).ok,false);assert.equal(E.find(s,server).rack,null);assert.equal(mountWithSupport(s,server,4,true).ok,true);assert.equal(E.find(s,server).rack,4);
+assert.equal(mountWithSupport(s,sw,5,true).ok,false,'2U collision rejected');assert.equal(E.find(s,sw).rails,false,'failed support operation rolled back');assert.equal(mountWithSupport(s,sw,6,true).ok,true);
+assert.equal(mountWithSupport(s,ups,8,true).ok,false);assert.equal(mountWithSupport(s,ups,1,true).ok,true);assert.equal(mountWithSupport(s,laptop,8,true).ok,false);assert.equal(E.find(s,laptop).rails,false);
+const stable=JSON.stringify(s);rackCheck(s,server,10);assert.equal(JSON.stringify(s),stable,'hover does not mount');
+const positions=Object.fromEntries(s.devices.map(d=>[d.id,d.rack!=null?rackPosition(d,1000,1100,'bench'):[20,50]]));assert.ok(positions[server].every(Number.isFinite));
+assert.ok(!renderBenchEquipment(s,positions).includes('data-device="'+server+'"'),'mounted chassis leaves bench');assert.ok(renderNetworkRack(s).includes('data-device="'+server+'"'));
+assert.ok(E.connect(s,server,'ac','wall','out1','power',6).ok);const link=s.links[0],wire=JSON.stringify(s.links);assert.ok(unmountToBench(s,server).ok);assert.equal(JSON.stringify(s.links),wire);assert.ok(renderBenchEquipment(s,positions).includes('data-device="'+server+'"'));
+assert.ok(!moveCableEnd(s,link.id,'wall','out1',{id:laptop,port:'eth'}).ok);assert.equal(JSON.stringify(s.links),wire);assert.ok(moveCableEnd(s,link.id,'wall','out1',{id:'wall',port:'out3'}).ok);assert.equal(s.links[0].id,link.id);
+s.links[0].broken=true;assert.ok(moveCableEnd(s,link.id,'wall','out3',{id:'wall',port:'out4'}).ok);assert.equal(s.links[0].broken,true);assert.ok(moveCableEnd(s,link.id,'wall','out4',null).ok);assert.equal(s.links.length,0);
+console.log('PASS: drag rack rules, explicit supports, height/collisions, heavy UPS low, non-rackable rejection, no duplicate bench equipment, read-only hover, unmount preserves cables, atomic cable relocation and damage preservation.');

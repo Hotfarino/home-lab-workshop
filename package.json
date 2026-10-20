@@ -1,0 +1,17 @@
+{
+  "name": "home-lab-workshop",
+  "private": true,
+  "version": "1.0.0",
+  "type": "module",
+  "description": "Standalone interactive 3D home lab for networking, hardware, RAID and virtualization practice.",
+  "engines": {
+    "node": ">=24"
+  },
+  "scripts": {
+    "test": "node run-tests.mjs",
+    "build": "node scripts/build-pages.mjs"
+  },
+  "devDependencies": {
+    "linkedom": "0.18.12"
+  }
+}

@@ -1,0 +1,27 @@
+/* Clean cable runs remain below clickable sockets and above the bench photograph. */
+.scene #wires .wire{stroke-width:2.8;stroke-linecap:round;stroke-linejoin:round;filter:drop-shadow(0 1px 1px #ffffff80);opacity:.9;transition:opacity .18s ease}
+.scene #wires .wire.power{stroke:#33434e;stroke-width:3.2}
+.scene #wires .wire.fiber{stroke:#b2730b}
+.scene #wires .wire.broken{stroke:#c02945;stroke-dasharray:6 5}
+.scene #wires .wire.flowing{stroke-width:3.5}
+.scene #wires .bench-adapter{pointer-events:none;transition:opacity .18s ease}
+.scene #wires .cable-muted{opacity:.09!important;filter:none}
+.scene #wires .wire.cable-selected{opacity:1;stroke-width:4.5;filter:drop-shadow(0 0 3px #ffffff)}
+.scene .bench-socket.cable-endpoint{outline:3px solid #057bca;outline-offset:5px;box-shadow:0 0 0 7px #ffffffb8;z-index:13}
+.scene .mini-port-strip .cable-endpoint{outline:3px solid #057bca;outline-offset:3px}
+.cable-manager{margin:0 0 10px;background:#fff;border:1px solid #d5e2ec;border-radius:12px;padding:0 14px;color:#193149}
+.cable-manager summary{font-size:13px;padding:11px 0;line-height:1.5}
+.cable-manager summary span{font-size:12px;font-weight:400;color:#597084;margin-left:10px}
+.cable-manager-body{padding:2px 0 12px;min-width:0}
+.cable-manager label{font-size:13px;font-weight:650;display:block;margin-bottom:6px}
+.cable-trace-controls{display:flex;flex-wrap:wrap;gap:8px}
+.cable-trace-controls select{flex:1 1 240px;width:0;max-width:100%;font-size:13px;min-height:40px}
+.cable-trace-controls button{font-size:12px;min-height:40px}
+.cable-manager p{font-size:12px;line-height:1.6;margin:8px 0 0;overflow-wrap:anywhere}
+.cable-key{display:flex;flex-wrap:wrap;gap:8px 18px;margin:10px 0;font-size:12px}
+.cable-key span{display:flex;align-items:center;gap:6px}
+.cable-key i{display:inline-block;width:23px;border-top:3px solid #1268df;border-radius:4px}
+.cable-key .power-key{border-color:#33434e}.cable-key .fiber-key{border-color:#b2730b}.cable-key .fault-key{border-color:#c02945;border-top-style:dashed}
+#cableTraceDetail{padding:8px 10px;background:#f2f7fb;border-radius:8px}
+@media(max-width:500px){.cable-trace-controls select{width:100%;flex-basis:100%}.cable-manager{padding:0 10px}}
+@media(prefers-reduced-motion:reduce){.scene #wires .wire,.scene #wires .bench-adapter{transition:none}}

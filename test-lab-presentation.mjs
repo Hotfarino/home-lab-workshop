@@ -1,0 +1,75 @@
+import {setupChallenges,challengeCases} from './lab-challenges.js';
+import {makeFoundation,checkpointStart,foundationKey} from './lab-foundation.js';
+import {setupPresentation} from './lab-presentation.js';
+import {setupDesktop} from './lab-desktop.js';
+import {setupControlCenter} from './lab-control-center.js';
+import {routerPage,labConsoleAccess} from './lab-management.js';
+import {buildTemplate} from './lab-planner.js';
+import fs from 'node:fs';import vm from 'node:vm';import assert from 'node:assert/strict';import {parseHTML} from 'linkedom';import * as E from './lab-engine.js';
+import {setupLearningGuide} from './lab-learning.js';
+import {renderBenchEquipment,setupBenchConnections} from './lab-bench-connections.js';
+import {portState} from './lab-hardware.js';
+const {document,HTMLSelectElement,HTMLElement,Event}=parseHTML(fs.readFileSync('home-lab.html','utf8'));
+Object.defineProperty(HTMLSelectElement.prototype,'value',{get(){const o=this.querySelector('option[selected]')||this.querySelector('option');return o?.getAttribute('value')??o?.textContent??''},set(v){for(const o of this.querySelectorAll('option'))o.toggleAttribute('selected',(o.getAttribute('value')??o.textContent)===String(v))}});
+Object.defineProperty(HTMLSelectElement.prototype,'options',{get(){return [...this.querySelectorAll('option')]}});HTMLSelectElement.prototype.add=function(x){this.append(x)};
+Object.defineProperty(HTMLElement.prototype,'checked',{get(){return this.hasAttribute('checked')},set(v){this.toggleAttribute('checked',v)}});
+for(const method of ['scrollIntoView','setPointerCapture','focus'])HTMLElement.prototype[method]=function(){};
+HTMLElement.prototype.showModal=function(){this.open=true};HTMLElement.prototype.close=function(){this.open=false};HTMLElement.prototype.getBoundingClientRect=()=>({left:0,top:0,width:1000,height:800,right:1000,bottom:800});
+const store=new Map(),win={addEventListener(){},matchMedia:()=>({matches:false})},localStorage={getItem:k=>store.get(k),setItem:(k,v)=>store.set(k,v)};
+Object.assign(globalThis,{location:{hash:''},document,window:win,localStorage,requestAnimationFrame:()=>1,cancelAnimationFrame(){}});
+const ctx=vm.createContext({setupChallenges,challengeCases,makeFoundation,checkpointStart,foundationKey,setupPresentation,setupDesktop,setupControlCenter,routerPage,buildTemplate,setupWorld:()=>{const root=document.createElement('section');root.id='worldLab';const source=fs.readFileSync('lab-world.js','utf8'),markup=source.slice(source.indexOf('root.innerHTML=`')+16,source.indexOf('`;\n',source.indexOf('root.innerHTML=`')));root.innerHTML=new Function('E','esc','return `'+markup+'`')(E,x=>x);document.getElementById('benchViewport').before(root);return {openScreen:()=>true,closeScreen(){},refresh(){},guide(){},view(){}};},E,portState,renderBenchEquipment,setupBenchConnections,setupLearningGuide,setupHardware:()=>null,setupStudio:()=>{const frame=document.createElement('div');frame.id='benchViewport';const scene=document.getElementById('scene');scene.before(frame);frame.append(scene);return {refresh(){},refreshScene(){},onResult(){},sound(){}};},document,window:win,Option:function(t,v){const e=document.createElement('option');e.textContent=t;e.value=v;return e},localStorage,requestAnimationFrame:()=>1,cancelAnimationFrame(){},setTimeout:()=>1,clearTimeout(){},queueMicrotask,console,Blob,URL});
+const run=x=>vm.runInContext(x,ctx),$=x=>document.getElementById(x),click=x=>$(x).dispatchEvent(new Event('click',{bubbles:true})),change=(x,v)=>{$(x).checked=v;$(x).dispatchEvent(new Event('change',{bubbles:true}));};
+run(fs.readFileSync('lab-ux.js','utf8').replaceAll('export function','function'));run(fs.readFileSync('lab-app.js','utf8').replace(/^import .*;$/gm,''));
+
+const before=run('JSON.stringify(s)');
+click('learningTools');assert.equal($('learningTools').getAttribute('aria-expanded'),'true');
+click('learningTools');assert.equal($('learningTools').getAttribute('aria-expanded'),'false');
+click('workshopChooseLab');assert.equal($('workshopLabs').open,true);
+$('workshopLabs').close();click('workshopFilesOpen');assert.equal($('workshopFiles').open,true);
+click('saveLab');assert.ok(store.size>0);$('workshopFiles').close();
+assert.equal(run('JSON.stringify(s)'),before,'menus and saving must not change the simulation');
+assert.ok($('workshopFiles').contains($('saveLab')));assert.ok($('workshopEquipment').contains($('inventory')));
+assert.equal($('learningDesktop').disabled,true,'no booted client means no laptop entry');
+run("s=buildTemplate('vm');render()");
+assert.equal($('learningDesktop').disabled,false);click('learningDesktop');assert.ok($('osDesktop').open);
+assert.ok($('osDesktop').textContent.includes('Lab console'));run('desktop.close()');
+run('s.walkthrough.index=3;learning.refresh()');assert.equal($('workshopProgressText').textContent,'Step 4 of 48');
+const wired=run('JSON.stringify(s)');$('learningMode').value='free';$('learningMode').dispatchEvent(new Event('change',{bubbles:true}));
+assert.equal($('learningGuide').hidden,true);assert.equal(document.querySelector('.workshop-progress').hidden,true);
+$('learningMode').value='guided';$('learningMode').dispatchEvent(new Event('change',{bubbles:true}));assert.equal($('learningGuide').hidden,false);
+assert.equal(run('JSON.stringify(s)'),wired,'help level must preserve devices and task progress');
+click('workshopChooseLab');$('mission').value='wifi';click('newLab');assert.equal($('workshopLabs').open,false);assert.equal($('resetDialog').open,true);$('resetDialog').querySelector('[data-close]').click();
+assert.equal(run('JSON.stringify(s)'),wired,'cancelling a new lab must preserve the current build');
+click('workshopChooseLab');$('mission').value='wifi';click('newLab');click('confirmReset');
+assert.equal(run('s.mission'),'wifi');assert.equal($('workshopProgressText').textContent,'Step 1 of 29');
+const ids=[...document.querySelectorAll('[id]')].map(n=>n.id);assert.equal(ids.length,new Set(ids).size,'moved tools must keep unique IDs');
+console.log('PASS: workshop menus, save handlers, power-gated laptop access, help modes, progress, cancel/start and unique controls.');
+
+click('workshopChooseLab');
+for(const [mission,pattern] of [['virtual',/37 shared foundation steps.*guest and virtual-network steps/s],['cloud',/37 shared foundation steps \+ 3 cloud-specific steps/],['wifi',/22 shared foundation steps \+ 7 follow-on steps/]]){
+ $('mission').value=mission;$('mission').dispatchEvent(new Event('change',{bubbles:true}));assert.match($('workshopLabDescription').textContent,pattern);
+}
+assert.match($('workshopLabs').textContent,/step counts do not count unique skills/);
+assert.equal(document.querySelector('#worldDeviceOptions summary').textContent,'More');
+assert.equal(document.querySelector('#worldViewOptions summary').textContent,'Camera');
+const manual=$('manualDialog').textContent;
+assert.equal(manual.includes('More device actions'),false);
+assert.match(manual,/then choose Continue/);
+assert.match(manual,/networking first/);
+console.log('PASS: course overlap is explicit, counts describe occurrences, and main-workflow help matches More/Camera/Continue.');
+
+$('workshopLabs').close();run("s=buildTemplate('vm');s.walkthrough={index:37};render()");click('workshopChooseLab');click('workshopSaveFoundation');
+assert.match($('workshopFoundationStatus').textContent,/foundation saved/);$('mission').value='virtual';$('mission').dispatchEvent(new Event('change',{bubbles:true}));
+assert.equal($('workshopUseFoundation').disabled,false);$('workshopUseFoundation').checked=true;click('newLab');click('confirmReset');
+assert.equal(run('s.walkthrough.index'),37);assert.equal(run('s.vms.length'),0,'foundation should not preload the guest exercises');
+assert.ok($('learningCoach').textContent.includes('VM · Virtual Machine'));assert.ok($('learningCoach').textContent.includes('External, Internal and Private'));
+click('workshopChallenges');document.querySelector('[data-challenge="dns"]').click();click('challengeConfirm');
+assert.equal(run('s.assessment.id'),'dns');assert.equal($('learningGuide').hidden,true,'independent challenges hide guided task solutions');assert.equal($('challengeGuide').hidden,false);assert.ok($('coach').classList.contains('learning-old-coach'),'independent challenges must not reveal old lesson answers');assert.equal(document.querySelector('.workshop-progress').hidden,true);
+assert.equal($('challengeGuide').textContent.includes('Inspect DNS given'),false,'no hints before the learner requests them');click('challengeHint');assert.equal(run('s.assessment.hints'),1);
+click('challengeSubmit');assert.match($('challengeGuide').textContent,/Name lookup/);assert.match($('challengeGuide').textContent,/current DNS 192.168.50.250/);
+run("by('router').router.dns='192.168.50.1';render()");click('challengeSubmit');assert.match($('challengeGuide').textContent,/Challenge complete/);
+click('learningDesktop');assert.match($('osBuildTask').textContent,/Independent challenge/);assert.ok($('osCheckChallenge'));run('desktop.close()');click('challengeReturn');assert.equal($('learningGuide').hidden,false);
+const saved=run('validateSave(JSON.parse(JSON.stringify(s)))');assert.equal(saved.assessment,undefined);
+console.log('PASS: foundation save/start via real controls, guest workspace starts clean, coach definitions, separate challenge UI, optional hints, failed/fixed results, laptop result submission, return to learning.');
+
+click('workshopChooseLab');$('mission').value='wired';$('mission').dispatchEvent(new Event('change',{bubbles:true}));assert.equal($('workshopUseFoundation').disabled,false);$('workshopUseFoundation').checked=true;click('newLab');click('confirmReset');assert.equal(run('s.walkthrough.index'),22);assert.equal(run('s.mission'),'wired');console.log('PASS: returning Home Network learners can also skip the checked network foundation.');

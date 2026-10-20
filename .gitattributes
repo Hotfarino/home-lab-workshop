@@ -1,0 +1,4 @@
+# Preserve bundled third-party shader strings and license notices verbatim.
+lab-three.js linguist-vendored -whitespace
+lab-ubuntu-wallpaper-license.txt -whitespace
+lab-yaru-license.txt -whitespace

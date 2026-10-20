@@ -1,0 +1,27 @@
+import assert from 'node:assert/strict';
+import {parseHTML} from 'linkedom';
+import * as E from './lab-engine.js';
+import {buildTemplate} from './lab-planner.js';
+import {setupDesktop} from './lab-desktop.js';
+import {configure} from './lab-os-config.js';
+import {request,context} from './lab-os-engine.js';
+import {createBrowserState,visitBrowser,moveBrowser} from './lab-browser.js';
+let s=buildTemplate('vm');const laptop=E.ofType(s,'laptop')[0],router=E.ofType(s,'router')[0],guest=s.vms.find(v=>v.mode==='private');
+const a=createBrowserState(),b=createBrowserState(),resolve=()=>request(s,laptop.id);
+assert.ok(visitBrowser(a,'example.com',resolve).ok);assert.equal(b.result,null);assert.equal(b.history.length,0);
+visitBrowser(a,'about:newtab',resolve);visitBrowser(a,'https://outside.example',resolve);assert.equal(a.result.unsupported,true);
+moveBrowser(a,-1,resolve);assert.equal(a.result,null);moveBrowser(a,-1,resolve);assert.ok(a.result.ok);
+visitBrowser(a,'https://example.com/',resolve);assert.deepEqual(a.history,['https://example.com','https://example.com/']);assert.equal(moveBrowser(a,1,resolve),null);
+router.router.dns='192.168.50.250';assert.equal(visitBrowser(a,a.url,resolve,true).ok,false);assert.equal(a.history.length,2);router.router.dns='192.168.50.1';assert.ok(visitBrowser(a,a.url,resolve,true).ok);
+const {document,Event,HTMLElement,HTMLSelectElement}=parseHTML('<html><body></body></html>');Object.assign(globalThis,{document,Event});HTMLElement.prototype.focus=function(){};Object.defineProperty(HTMLSelectElement.prototype,'value',{get(){const o=this.querySelector('option[selected]')||this.querySelector('option');return o?.getAttribute('value')||o?.textContent||''},set(v){for(const o of this.querySelectorAll('option'))o.toggleAttribute('selected',(o.getAttribute('value')||o.textContent)===v)}});
+const desktop=setupDesktop({getState:()=>s,result(){},render(){}}),$=id=>document.getElementById(id),click=sel=>document.querySelector(sel).click(),submit=()=> $('osBrowserForm').dispatchEvent(new Event('submit',{bubbles:true,cancelable:true}));
+assert.ok(desktop.open(laptop.id));for(const app of ['browser','firefox'])assert.ok(document.querySelector('.os-desktop-icons [data-osapp="'+app+'"]'));
+click('[data-osapp="browser"]');submit();assert.match(document.querySelector('.os-browser-result').textContent,/Example page received/);
+click('[data-osapp="firefox"]');assert.equal(document.querySelector('.os-browser-result'),null);$('osUrl').value='https://outside.example';submit();assert.match(document.querySelector('.os-browser-result').textContent,/Address outside this lab/);
+click('[data-osapp="browser"]');assert.equal($('osUrl').value,'https://example.com');assert.match(document.querySelector('.os-browser-result').textContent,/Example page received/);
+configure(s,context(s,laptop.id),'adapter',false);click('#osBrowserReload');assert.ok(document.querySelector('.os-browser-result.fail'));configure(s,context(s,laptop.id),'adapter',true);click('#osBrowserReload');assert.ok(document.querySelector('.os-browser-result.pass'));
+click('[data-osapp="firefox"]');assert.equal($('osUrl').value,'https://outside.example');click('#osBrowserExample');click('#osBrowserBack');assert.equal($('osUrl').value,'https://outside.example');click('#osBrowserForward');assert.equal($('osUrl').value,'https://example.com');assert.ok(document.querySelector('.os-browser-result.pass'));
+assert.ok(desktop.open(guest.id));assert.ok($('osDesktop').classList.contains('os-ubuntu'));for(const app of ['browser','firefox']){click('[data-osapp="'+app+'"]');assert.equal(document.querySelector('.os-browser-result'),null);submit();assert.match(document.querySelector('.os-browser-result').textContent,/no physical LAN or Internet route/);}
+click('#osDisconnectGuest');click('[data-osapp="browser"]');assert.ok(document.querySelector('.os-browser-result.pass'));click('[data-osapp="firefox"]');assert.ok(document.querySelector('.os-browser-result.pass'));
+const ids=[...document.querySelectorAll('[id]')].map(n=>n.id);assert.equal(ids.length,new Set(ids).size);assert.ok(s.desktopProgress.machines[laptop.id].page);assert.notEqual(s.desktopProgress.machines[guest.id].page,true);desktop.close();
+console.log('PASS browsers: independent app and machine histories, forward-history truncation, fresh DNS/adapter checks on reload, unsupported addresses, Windows/Ubuntu shortcuts, private-VM isolation, original Browser alias and progress evidence.');

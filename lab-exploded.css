@@ -1,0 +1,99 @@
+/* Only the fully guided mode supplies animated destination hints. */
+body[data-learning-mode=guided] .learning-destination::before,
+body[data-learning-mode=guided] .photo-port-marker.hw-destination{animation:destinationBeacon 1.6s ease-in-out infinite}
+body[data-learning-mode=guided] .learning-destination::after,
+body[data-learning-mode=guided] .physical-port.hw-destination .socket-art::after{content:'';position:absolute;inset:-9px;border:3px solid #ee9b00;border-radius:50%;pointer-events:none;animation:destinationRing 1.6s ease-in-out infinite}
+@keyframes destinationBeacon{0%,100%{opacity:1;box-shadow:0 0 0 3px #fff,0 0 0 8px #ffbc3555}50%{opacity:.45;box-shadow:0 0 0 3px #fff,0 0 0 3px #ffbc351a}}
+@keyframes destinationRing{0%,100%{opacity:1;transform:scale(1)}50%{opacity:.25;transform:scale(1.22)}}
+.hardware-view-tools{scroll-margin-top:105px;padding:12px 14px;margin:12px 0;border:1px solid #c7dbe9;background:#fff;border-radius:12px}
+.hardware-zoom{display:flex;gap:8px;align-items:center;flex-wrap:wrap}
+.hardware-zoom button{min-width:42px;min-height:42px;font-size:14px}
+.hardware-zoom output{font-size:14px;min-width:44px;text-align:center;font-variant-numeric:tabular-nums}
+.hardware-view-tools p{margin:8px 0 0;font-size:14px;line-height:1.55;max-width:90ch}
+.hardware-viewport{position:relative;overflow:auto;max-height:64vh;min-height:280px;border:1px solid #c7dbe9;border-radius:12px;background:#edf4f9;scrollbar-gutter:stable;overscroll-behavior:contain}
+.hardware-viewport .hardware-stage{padding:14px 14px 70px;transform-origin:0 0;max-width:none;margin-inline:auto}
+.hardware-dialog .face-toggle{flex-wrap:wrap}
+.exploded-unit .exploded-photo-area{position:relative;z-index:1}
+.exploded-photo{position:relative;width:min(100%,270px);aspect-ratio:1;margin:0 auto;background-image:url('lab-physical-equipment.jpg');background-size:300% 400%;background-repeat:no-repeat;border-radius:8px}
+.photo-port-marker{position:absolute;transform:translate(-50%,-50%);padding:0;width:22px;height:22px;min-width:0;min-height:0;border:2px solid white;border-radius:50%;background:#1062b7;color:white;font:750 12px/1 system-ui;display:grid;place-items:center;z-index:3;box-shadow:0 0 0 1px #145a96;touch-action:manipulation}
+.photo-port-marker:hover,.photo-port-marker.photo-port-active{background:#07528d;color:white;box-shadow:0 0 0 3px #e8a01d}
+.exploded-gap{height:32px;display:flex;justify-content:center;align-items:center;position:relative;z-index:2}
+.exploded-gap span{background:#fff;padding:4px 12px;border:1px dashed #aec8db;border-radius:30px;font-size:13px;color:#47687c}
+.exploded-unit .connector-panel{position:relative;z-index:2;background:#f1f7fb;margin:0;border-color:#b9d1e1;max-width:none!important;width:100%}
+.exploded-unit .physical-ports,.exploded-unit.wall .physical-ports{display:grid;grid-template-columns:repeat(auto-fit,minmax(94px,1fr));width:100%;gap:12px;align-items:stretch}
+.exploded-unit .physical-port{min-height:132px;padding:10px 7px;scroll-margin:18px}
+.exploded-unit .physical-port b{font-size:12px;letter-spacing:0;display:flex;flex-direction:column;align-items:center;gap:6px}
+.exploded-unit .physical-port small{font-size:12px}
+.socket-number{display:grid;place-items:center;width:23px;height:23px;border-radius:50%;font:750 12px/1 system-ui;background:#1062b7;color:white}
+.exploded-unit .socket-art{width:62px;height:46px}
+.exploded-unit .panel-caption{font-size:14px}.exploded-unit .panel-caption span{font-size:12px}
+.exploded-unit .adapter-note{font-size:13px;margin:12px 0 0}
+.exploded-callout{position:absolute;inset:0;width:100%;height:100%;pointer-events:none;z-index:1;overflow:visible}
+.exploded-callout path{fill:none;stroke:#387ea6;stroke-width:1.8;stroke-dasharray:5 5;opacity:.8;stroke-linejoin:round}
+.exploded-wall-photos{display:flex;justify-content:center;gap:18px;padding:20px 0;min-height:220px}
+.exploded-wall-photos figure{margin:0;width:42%;max-width:145px}
+.wall-photo-crop{position:relative;width:100%;aspect-ratio:100/116;overflow:hidden;border:1px solid #c7d4db;border-radius:8px}
+.wall-photo-crop img{position:absolute;width:1672%;max-width:none;height:auto;pointer-events:none}
+.exploded-wall-photos figcaption{font-size:13px;text-align:center;margin-top:10px;color:#42647a}
+@media(max-width:680px){.hardware-viewport .hardware-stage{padding:10px 8px 50px;gap:32px}.hardware-view-tools{scroll-margin-top:105px;padding:10px}.hardware-dialog .hardware-heading{position:sticky;top:0;display:grid;grid-template-columns:minmax(0,1fr) 94px;gap:8px}.hardware-dialog .hardware-heading h2{font-size:18px}.hardware-dialog .hardware-heading .eyebrow{font-size:10px}.hardware-dialog .hardware-heading button{min-height:44px;padding:8px;font-size:12px}.exploded-unit .physical-ports,.exploded-unit.wall .physical-ports{grid-template-columns:repeat(auto-fit,minmax(92px,1fr))}.photo-port-marker{width:20px;height:20px;font-size:11px}.exploded-gap span{font-size:12px}}
+@media(prefers-reduced-motion:reduce){body[data-learning-mode=guided] .learning-destination::before,body[data-learning-mode=guided] .learning-destination::after,body[data-learning-mode=guided] .photo-port-marker.hw-destination,body[data-learning-mode=guided] .physical-port.hw-destination .socket-art::after{animation:none!important}}
+body.lab-reduce-motion .learning-destination::before,body.lab-reduce-motion .learning-destination::after,body.lab-reduce-motion .photo-port-marker.hw-destination,body.lab-reduce-motion .physical-port.hw-destination .socket-art::after{animation:none!important}
+
+/* Wiring exploded along its connection axis: chassis → socket → plug → cable. */
+.hardware-viewport:has(.wiring-exploded-stage){background:#fff;max-height:70vh}
+.hardware-stage.wiring-exploded-stage{grid-template-columns:minmax(0,1fr) minmax(0,1fr);gap:72px;padding:24px 20px 120px;background:radial-gradient(circle at 50% 50%,#edf6fc 1px,transparent 1px) 0 0/20px 20px}
+.wiring-exploded-stage .exploded-unit{padding:16px;background:#ffffffed;border:1px solid #c8dce9;border-radius:16px;box-shadow:0 8px 24px #2949650a;min-width:0}
+.wiring-exploded-stage .exploded-unit>header{position:relative;z-index:2;align-items:center;gap:8px}
+.wiring-exploded-stage .exploded-unit h3{font-size:18px;overflow-wrap:anywhere;margin:4px 0}
+.wiring-exploded-stage .exploded-unit .eyebrow{font-size:12px}
+.exploded-port-choice{position:relative;z-index:2;display:grid;gap:5px;font-size:14px;margin:12px 0 20px;color:#3b5b71}
+.exploded-port-choice select{width:100%;min-width:0;font-size:14px;background:#f7fbfd}
+.exploded-fan{display:grid;grid-template-columns:minmax(120px,1fr) 192px;gap:24px;align-items:center;min-height:260px}
+.exploded-peer .exploded-fan{grid-template-columns:192px minmax(120px,1fr)}
+.exploded-peer .exploded-photo-area{grid-column:2;grid-row:1}.exploded-peer .connector-panel{grid-column:1;grid-row:1}
+.wiring-exploded-stage .exploded-photo{width:100%;border-radius:0;box-shadow:0 10px 18px #304d6014;outline:6px solid #fff}
+.wiring-exploded-stage .exploded-photo-area{padding:8px 0;background:#fff;align-self:center}
+.intact-caption{display:block;text-align:center;font-size:13px;margin-top:16px;color:#526b7c}
+.wiring-exploded-stage .exploded-unit .connector-panel{background:transparent;border:0;box-shadow:none;padding:0;margin:0!important;width:100%;z-index:3}
+.wiring-exploded-stage .exploded-unit .physical-ports{display:flex;flex-direction:column;gap:24px;width:100%}
+.wiring-exploded-stage .exploded-unit .panel-caption{font-size:14px;text-align:center;margin-bottom:18px;background:#fff;padding:4px}
+.wiring-exploded-stage .exploded-unit .panel-caption span{font-size:12px}
+.exploded-port-row[hidden]{display:none!important}
+.wiring-exploded-stage .exploded-unit .physical-port{display:flex;flex-direction:column;align-items:stretch;gap:12px;width:192px;min-height:142px;padding:10px 4px;border:1px solid #d0dfeb;border-radius:12px;background:#fff;box-shadow:0 6px 15px #233f5710;scroll-margin:16px}
+.wiring-exploded-stage .exploded-unit .physical-port b{display:flex;flex-direction:row;justify-content:center;align-items:center;gap:7px;font-size:13px}
+.wiring-exploded-stage .exploded-unit .physical-port small{font-size:12px;line-height:1.5;min-height:36px}
+.exploded-assembly{display:flex;align-items:center;position:relative;width:180px;min-height:54px;margin:auto}
+.exploded-peer .exploded-assembly{flex-direction:row-reverse}
+.wiring-exploded-stage .exploded-unit .socket-art{width:52px;height:42px;flex:none}
+.insertion-guide{height:0;width:26px;border-top:2px dashed #829eaf;flex:none;position:relative}
+.insertion-guide:before{content:'';position:absolute;border-top:4px solid transparent;border-bottom:4px solid transparent;border-right:6px solid #688b9f;top:-5px;left:0}
+.exploded-peer .insertion-guide{transform:scaleX(-1)}
+.wiring-exploded-stage .exploded-plug{position:relative;display:block;left:auto;bottom:auto;top:auto;width:100px;height:56px;border:0;border-radius:0;background:none!important;box-shadow:none;flex:none}
+.wiring-exploded-stage .exploded-plug:before,.wiring-exploded-stage .exploded-plug:after{display:none}
+.exploded-plug svg{display:block;width:100%;height:100%;filter:drop-shadow(0 3px 2px #19384c33)}
+.exploded-peer .exploded-plug{transform:scaleX(-1)}
+.exploded-plug.example-plug{opacity:.38}
+.wire-terminal{position:absolute;right:1px;top:27px;width:2px;height:2px;display:block}
+.wiring-exploded-stage .exploded-callout{z-index:2}
+.wiring-exploded-stage .exploded-callout path{stroke:#567b93;stroke-width:1.5;stroke-dasharray:4 5}
+.wiring-exploded-stage .exploded-wall-photos{gap:6px;padding:8px 0;min-height:0}
+.wiring-exploded-stage .exploded-wall-photos figure{width:46%}
+.wiring-exploded-stage .exploded-wall-photos figcaption{font-size:12px}
+.wiring-exploded-stage .adapter-note{position:relative;z-index:2;font-size:13px;background:white;line-height:1.5;margin-top:18px}
+.wiring-exploded-stage .physical-wire{stroke-width:4}
+.wiring-exploded-stage .exploded-photo-area,.wiring-exploded-stage .connector-panel{animation:spreadWiring .32s ease-out both}
+@keyframes spreadWiring{from{opacity:.2;translate:0 10px}to{opacity:1;translate:0 0}}
+@media(max-width:680px){.hardware-stage.wiring-exploded-stage{padding:18px 16px 110px;gap:48px}.hardware-view-tools:has(#hwAllSockets) p:after{content:' Swipe sideways in the diagram to see both devices.';font-weight:650;color:#1467aa}}
+@media(prefers-reduced-motion:reduce){.wiring-exploded-stage .exploded-photo-area,.wiring-exploded-stage .connector-panel{animation:none}}
+body.lab-reduce-motion .wiring-exploded-stage .exploded-photo-area,body.lab-reduce-motion .wiring-exploded-stage .connector-panel{animation:none}
+/* Geometry is stable while measuring cable endpoints; the connector itself never slides. */
+.wiring-exploded-stage .exploded-plug{left:auto!important;right:auto!important;top:auto!important;bottom:auto!important;animation:none!important}
+@keyframes spreadWiring{from{opacity:.2}to{opacity:1}}
+.hardware-stage.wiring-exploded-stage{padding:18px 20px 46px}
+.wiring-exploded-stage .exploded-unit{padding:12px}
+.wiring-exploded-stage .exploded-unit h3{font-size:16px}
+.wiring-exploded-stage .exploded-fan{min-height:210px}
+.wiring-exploded-stage .exploded-port-choice{margin:8px 0 10px}
+.wiring-exploded-stage .exploded-photo{max-width:200px}
+.wiring-exploded-stage .adapter-note{font-size:12px;line-height:1.4;margin-top:10px}
+.hardware-view-tools:has(#hwAllSockets){padding:10px 14px;margin:8px 0}
