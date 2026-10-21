@@ -1,4 +1,13 @@
-# Home Lab release notes
+# Virtual Lab Portfolio release notes
+
+## Unified portfolio — October 21, 2026
+
+- Added a portfolio landing page with links to the networking lab, Orbit OS & Scripting Lab, Packet Rescue, Packet Blocks and the RAID guide.
+- Imported Orbit source, 56 automated tests, licensed runtime assets and 24 Packet Rescue missions into `orbit/`.
+- Preserved the networking app at `home-lab.html` and redirect legacy root workflow bookmarks there.
+- Added return navigation and one build/CI pipeline for both apps; website packaging excludes test files and personal exports.
+- Kept simulation rules and browser storage keys intact. Localhost and GitHub Pages progress remain separate.
+
 
 ## Standalone GitHub project — October 20, 2026
 

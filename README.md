@@ -1,99 +1,91 @@
-# Home Lab Workshop
+# Home Lab Workshop · Virtual IT Lab Portfolio
 
-An interactive 3D networking lab that runs in your browser. Build a network on the workbench, connect power and data cables, mount rack equipment, and configure the build through a simulated laptop.
+A collection of browser-based labs for learning networking, operating systems, scripting and troubleshooting. Build a network in a 3D workshop, practice commands inside simulated computers, and follow packets through a network with an interactive coach.
 
-**[Launch the Home Lab](https://hotfarino.github.io/home-lab-workshop/)** · [Report a problem](https://github.com/Hotfarino/home-lab-workshop/issues) · [Automated checks](https://github.com/Hotfarino/home-lab-workshop/actions/workflows/pages.yml)
+**[Open the portfolio](https://hotfarino.github.io/home-lab-workshop/)** · [Report an issue](https://github.com/Hotfarino/home-lab-workshop/issues) · [Build and deployment](https://github.com/Hotfarino/home-lab-workshop/actions/workflows/pages.yml)
 
-[![Home Lab checks and deployment](https://github.com/Hotfarino/home-lab-workshop/actions/workflows/pages.yml/badge.svg?branch=main)](https://github.com/Hotfarino/home-lab-workshop/actions/workflows/pages.yml)
+[![Virtual Lab checks and deployment](https://github.com/Hotfarino/home-lab-workshop/actions/workflows/pages.yml/badge.svg?branch=main)](https://github.com/Hotfarino/home-lab-workshop/actions/workflows/pages.yml)
 
-This repository contains only the Home Lab project. Its GitHub Pages website publishes the app and its supporting assets. No account sign-in is needed to use the lab.
+![Home Lab Workshop's 3D networking workbench](portfolio/media/network-studio.png)
 
-## Start learning
+## Choose a lab
 
-1. Select **Start learning** and keep **Home network → rack server → VMs**.
-2. Follow the current task beside the workbench. The first task adds a laptop.
-3. Connect the requested sockets, switch on the equipment, and press **Continue**.
-4. Use **Open laptop → Lab console** for configuration and network tests.
-5. Use **Guide options** to adjust help, narration and animation.
+| Experience | What you practice | Open |
+| --- | --- | --- |
+| **Home Lab Workshop** | Cabling, power, rack equipment, IPv4, DHCP, DNS, Wi-Fi, RAID, VMs and fault diagnosis | [Networking lab](https://hotfarino.github.io/home-lab-workshop/home-lab.html) |
+| **Orbit OS & Scripting Lab** | Windows/PowerShell, Ubuntu/Bash, macOS/zsh, files, processes, Python and virtual machines | [OS and scripting](https://hotfarino.github.io/home-lab-workshop/orbit/) |
+| **Packet Rescue** | Bit Builder, Subnet Slicer, Packet Delivery and Network Repair with Orbit coaching | [Play Packet Rescue](https://hotfarino.github.io/home-lab-workshop/orbit/#packet-rescue) |
+| **Packet Blocks** | Binary, IPv4 and subnet practice with guided and falling-block modes | [Play Packet Blocks](https://hotfarino.github.io/home-lab-workshop/orbit/#packet-blocks) |
+| **RAID workflow guide** | Striping, mirroring, parity, disk failure and rebuilds | [Explore RAID](https://hotfarino.github.io/home-lab-workshop/raid-workflow.html) |
 
-**Equipment** opens the parts tray. **Choose lab** selects an exercise. **Save & files** saves in the current browser or exports a portable JSON build. A desktop or laptop browser with WebGL 2 is recommended.
+The networking lab has **8 paths**, including free build, and 6 independent challenges. Orbit has **15 learning paths with 93 tasks**. Packet Rescue has **24 missions across 4 sectors**. Counts describe curriculum organization, not unique skills: network paths share foundation tasks. [Networking lab details](NETWORK-LAB.md) · [Orbit lab details](orbit/README.md)
 
-## What the project demonstrates
+### A five-minute tour
 
-- **Networking:** cabling, IPv4 addresses and masks, gateways, DHCP, DNS, Wi-Fi, routing and connection troubleshooting.
-- **Infrastructure:** compatible rack mounting in an 18U rack, power distribution, RAID 0/1/5/6/10, server prerequisites and virtual-switch isolation.
-- **Interactive software:** JavaScript modules, HTML/CSS, Three.js, Blender/GLB assets, responsive controls and validated save-file imports.
-- **Verification:** 30 automated test suites cover the engine, guided tasks, restricted OS tools, save validation and navigation. GitHub Actions runs tests before deployment.
+1. Open **Home Lab Workshop**, choose **Start learning**, and follow the current task beside the bench. Add a laptop, connect equipment and open the laptop to configure it.
+2. Return with **All labs** and open **Orbit**. Keep Guided mode, open a workstation and follow Orbit's instruction in Terminal or Code.
+3. Open **Packet Rescue → Packet Delivery** to see local versus routed traffic. Try **Network Repair** to diagnose a wrong IP address, subnet mask or gateway.
 
-| Lab | Focus | Guided tasks |
-| --- | --- | ---: |
-| Home network from zero | Power, cabling, DHCP, rack server and first VM | 42 |
-| Rack storage & RAID | Shared storage, drive failures and recovery | 35 |
-| Virtualization server | Guest resources and network isolation | 48 |
-| Wireless home office | Access point, security and client connection | 29 |
-| Two isolated networks | Subnets, gateways and routing | 31 |
-| Hybrid cloud & backup | Local infrastructure, cloud models and backup | 40 |
-| Find and repair faults | Cable, DHCP and DNS diagnosis | 5 |
-| Free build | Open-ended building with optional orientation | 23 |
+A desktop or laptop browser with WebGL 2 gives the best 3D experience. The portfolio works on smaller screens; the OS lessons also expose computer buttons when 3D is unavailable. No account or API key is required.
 
-These are 253 task occurrences, including shared foundations, rather than 253 unique skills. A validated foundation checkpoint lets returning students skip completed setup. Guided mode teaches each task; six independent challenges offer optional hints and a requirement-by-requirement results breakdown.
+## Engineering highlights
+
+- **Interactive 3D:** Three.js scenes, Blender-authored GLB hardware, draggable parts, compatible cable endpoints, rack placement and animated connection feedback.
+- **Model-driven learning:** hardware/network state drives task validation, troubleshooting results and coaching. Independent challenges give requirement-by-requirement feedback.
+- **OS teaching interfaces:** simulated desktops, file managers, process tools, command interpreters, VM controls and code editors.
+- **Real browser Python:** a pinned, self-hosted Pyodide runtime executes Python in a Web Worker, with stop/time-limit handling. The simulated shell does not execute commands on the visitor's computer.
+- **Accessible learning controls:** keyboard-accessible device actions, adjustable guidance, optional browser narration, reduced-motion support and searchable references.
+- **Delivery:** one repository, one static build and one GitHub Pages deployment. CI runs both applications' tests before publishing an allowlisted runtime artifact.
 
 ## Run locally
+
+Use Node.js 24+, npm and Python 3:
 
 ```sh
 git clone https://github.com/Hotfarino/home-lab-workshop.git
 cd home-lab-workshop
-python3 -m http.server 8768 --bind 127.0.0.1
-```
-
-Open **http://127.0.0.1:8768/home-lab.html**. The runtime is static: no API key, backend or npm installation is needed to use it. Serve it over HTTP rather than opening the HTML as a local file.
-
-## Test and publish
-
-Use Node.js 24 and npm:
-
-```sh
 npm ci --ignore-scripts
 npm test
 npm run build
+npm run serve
 ```
 
-The build creates `dist/` with two equivalent entry points: `index.html` and `home-lab.html`. It checks local links and imports and copies only approved runtime files. Tests, editable Blender sources, npm dependencies and Git metadata stay out of the website artifact.
+Open **http://127.0.0.1:8783/**. `dist/` contains the complete website. Serve over HTTP; opening HTML directly from disk will not load modules and workers correctly.
 
-Pushes to `main` run the [Pages workflow](.github/workflows/pages.yml). Deployment requires a passing test run and build. Pull requests run checks without deploying. The website uses GitHub Pages with GitHub Actions as its publishing source.
+No backend service, paid hosting or environment secrets are needed. The prebuilt Three.js and Python runtime assets are included. Python's first start downloads the bundled runtime from this site's own origin.
 
-DOM tests use LinkeDOM and stub WebGL; they do not replace visual browser testing or prove every possible user-created layout. [Standalone release notes](CHANGELOG.md) explain the repository extraction.
+## Repository map
 
-## Architecture
+```text
+index.html                 Portfolio entry point
+portfolio/                 Landing page styles, icon and real app previews
+home-lab.html              Networking lab entry point (existing URL preserved)
+lab-*.js / lab-*.css       Networking engine, coaching, UI and 3D scene
+blender/                   Editable network hardware and room sources
+raid-workflow.html         Interactive storage guide
+orbit/                     OS/scripting app, games, assets, sources and tests
+scripts/build-pages.mjs    Combined static build and local-reference validation
+.github/workflows/         Automated checks and GitHub Pages deployment
+```
 
-| Files | Responsibility |
-| --- | --- |
-| `lab-engine.js` | Hardware, cable, power, IPv4, RAID and VM rules |
-| `lab-app.js` | State changes, configuration handlers and saves |
-| `lab-courses.js`, `lab-learning.js`, `lab-task-checks.js` | Guided tasks, explanations and completion validation |
-| `lab-world*.js`, `lab-blender-assets.js`, `lab-model3d*.js` | 3D scene, models, wiring and connector inspection |
-| `lab-desktop.js`, `lab-os*.js` | Restricted OS, applications and command simulation |
-| `lab-management.js`, `lab-control-center.js` | Management access and laptop tools |
-| `scripts/build-pages.mjs` | Standalone website packaging and local-reference checks |
+Networking checks run with `npm run test:network`; Orbit checks run with `npm run test:orbit`. DOM tests stub WebGL and do not replace visual browser checks. The build validates relative links/imports for GitHub's `/home-lab-workshop/` project path. Tests, snapshots, editable Blender sources, personal progress exports, npm dependencies and Git metadata are excluded from the published website.
 
-The [Blender directory](blender/README.md) contains editable model sources. Bundled GLB assets and Three.js allow the browser app to work without a front-end compilation step.
+## Scope and privacy
 
-## Simulation boundaries
+This is an independent educational project covering selected CompTIA A+ foundations, with deeper scripting and subnet practice. It is not official CompTIA training or a copy of CertMaster. Reference links and simulation limits appear inside the labs.
 
-This is an independent educational project covering selected CompTIA A+ networking, hardware and troubleshooting fundamentals. It is not official CompTIA material or a copy of CertMaster.
+Operating systems, shell commands, devices, VMs and network packets are teaching simulations. **Python code actually runs in the browser worker.** No real cloud VM, OS kernel or external network traffic is created by the lab model. Technical simplifications are documented in each lab's manual and sources panel.
 
-Windows, Ubuntu, Chrome, Firefox, terminals, networks and VMs are restricted teaching simulations. No real OS kernel, shell commands, packets, virtual machines or cloud resources run. Numeric readings come from the model. Animated cable pulses indicate modeled power/link readiness rather than measured data throughput.
+Progress stays in the current browser. Hosting addresses have separate browser storage: existing localhost saves do not automatically appear on GitHub Pages. Where the app offers export/import, use it to move your work. The collection contains the virtual lab projects, not the broader study repository or its question banks.
 
-IPv6 routing, tagged trunks, STP, dynamic routing and radio propagation are outside this model. The in-app **Lab manual** describes simplifications and links to technical references.
+## Portfolio description
 
-## Saves and privacy
+> Developed and iteratively tested a browser-based virtual IT lab portfolio using JavaScript, Three.js and Blender assets, combining guided networking simulations, OS and scripting practice, a browser Python runtime, and interactive troubleshooting games. Automated checks and GitHub Actions validate the apps before GitHub Pages deployment.
 
-Progress stays in the current browser unless you export a build. Browser saves do not transfer automatically between the previous hosting address, GitHub Pages and localhost. To move a build, export it from the old address and import the JSON file on the new one. Review device names and settings before sharing a file.
+Use this description only to represent work and technical decisions you can explain in an interview. Be ready to discuss the network model, task checks, browser storage, simulation boundaries and how testing informed improvements.
 
-This project link grants no access to private repositories. Public repositories elsewhere on an owner's GitHub profile remain publicly viewable.
+## Credits and feedback
 
-## Attribution and issues
+Preserve [network artwork credits](lab-os-artwork-credits.txt), the [Three.js license](three-license.txt), [Orbit asset provenance](orbit/ASSETS.md), and bundled Ubuntu/Yaru/Pyodide notices. Product names and artwork belong to their respective owners; no affiliation or endorsement is implied.
 
-Preserve [desktop artwork credits](lab-os-artwork-credits.txt), the [Three.js license](three-license.txt), and the bundled Ubuntu/Yaru notices. Third-party trademarks and artwork belong to their owners; no endorsement is implied.
-
-[Report a problem](https://github.com/Hotfarino/home-lab-workshop/issues) with the lab, task, browser, expected behavior and actual result. Include a screenshot and, if appropriate, an exported build without private information.
+[Report an issue](https://github.com/Hotfarino/home-lab-workshop/issues) with the lab name, mission/task, browser, steps to reproduce and expected versus actual behavior. Screenshots help. Review exported files before attaching them.
