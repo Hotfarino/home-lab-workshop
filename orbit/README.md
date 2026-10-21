@@ -40,6 +40,33 @@ There are **93 tasks across 15 paths**, organized as Foundations → Applied OS 
 - Browser-local progress, course-specific workspaces, export/import with validation, and script downloads.
 - Responsive layout, keyboard alternatives for 3D controls, visible focus, reduced-motion support and graceful WebGL failure.
 
+## Packet Blocks campaign
+
+Launch **Packet Blocks** from the top bar or computer dock, or use `/orbit/#packet-blocks`. Toggle bits or select a tile and its destination, then press **Send Packet**. Early rounds include Orbit's guidance; later rounds test independent understanding. Help and small interactive examples remain available. No countdown or lives are required.
+
+The campaign contains **32 rounds in eight chapters and 24 aligned rescues**. Original Packet Rescue missions and the original block arcade remain accessible through **Mission map**, with their earlier saves intact. New campaign progress is separate because the objectives and tasks changed. OS coursework is unchanged.
+
+| Chapter | Skills | Objective context |
+|---|---|---|
+| Bits / Octets | Four-bit training, eight-bit octets, binary and decimal | Supporting instruction for A+ 2.6 / Network+ 1.7 |
+| IPv4 / Address types | Four octets, invalid and duplicate addresses, private and special-use ranges | A+ 220-1201 2.6 / Network+ N10-009 1.7 |
+| Configuration | Manual addressing, DHCP, gateway and DNS | A+ 2.4, 2.6 / Network+ 3.4 |
+| Network boundaries | Mask-based membership, including /23 across octets | A+ 2.6 foundation / Network+ 1.7 extension |
+| Subnetting | /25–/30, network/broadcast/usable ranges | Network+ 1.7 extension |
+| Applied troubleshooting | DHCP failure, wrong mask, combined gateway/DNS faults | A+ 5.5 / Network+ 5.3, 5.5 |
+
+Each mission carries its chapter mapping and source ID in `packet-curriculum.js`. **Curriculum & sources** provides the published final A+ v3.0 and Network+ v4.0 PDFs, vendor setting/command references and RFC/IANA sources. These are original educational exercises, not official exam questions. Not all objectives in these sections are covered.
+
+Windows 11 24H2-style, Ubuntu 24.04 GNOME and macOS Sequoia 15-style settings, the supported terminal commands and packet delivery share a single campaign network state. OS switching preserves progress. DNS lookup is displayed separately from delivery. A successful ping alone cannot earn repair credit: all required plan settings must match. The standalone OS coursework retains its own per-course machines.
+
+**Settings & rewards** contains mute, reduced motion, bit hints, cosmetics, concept mastery, replay and a confirmation-protected campaign reset. Endless practice unlocks at eight completions. Progress uses `orbit-packet-blocks-v2` in localStorage; no account or network service is required. The existing coursework export/import does not include this separate campaign save.
+
+Limitations: the views are restricted recreations, not pixel-identical licensed desktops. Commands produce teaching output, not full OS output. Packet flow is an authored logical simulation; it does not emulate Ethernet timing, ARP, transport handshakes, all routing policies or actual network traffic. APIPA is simplified across OS themes. Browser speech uses the device's available voice. Physical touch devices and every browser/OS combination have not been tested.
+
+## Packet Blocks validation
+
+Automated checks cover all 56 authored solutions and incorrect configuration fields, binary/mask arithmetic, private/special-use boundaries, the `192.168.1.130/26` regression, /31–/32 exceptions, shared DNS/routing state, malformed saves and UI lifecycle behavior. Stress checks generate 10,000 solvable rounds, perform 5,000 save/restore transitions and cycle the UI through 300 OS/tool/open/close sequences. Browser coverage and limits are recorded in `../audits/packet-blocks.json`.
+
 ## Run locally
 
 From the repository root, run `npm run build` then `npm run serve`. Open **http://127.0.0.1:8783/orbit/**. The server listens only on this computer.
@@ -81,6 +108,9 @@ References are available inside the lab and in [SOURCES.md](SOURCES.md). Dion’
 - `assistant.js`: visible coach, spotlight guidance and browser speech controls.
 - `depth-curriculum.js` / `powershell-depth.js`: applied and deeper projects.
 - `pipeline.js`: bounded PowerShell object-pipeline support.
+- `packet-core.js`: shared campaign network calculations, state, routes and limited command outputs.
+- `packet-curriculum.js` / `packet-progress.js`: authored missions, mappings, validation, mastery and bounded saves.
+- `packet-os.js` / `packet-blocks.js` / `packet-blocks.css`: OS presentation, interactions and responsive game UI.
 - `app.js`: navigation, OS applications, coach and interactions.
 - `world.js`: Three.js environment, Blender hardware loading, screens and camera.
 - `python-worker.js` / `python.js`: Python execution and lifecycle limits.

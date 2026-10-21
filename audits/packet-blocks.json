@@ -1,0 +1,96 @@
+{
+  "date": "2026-10-21",
+  "product": "Packet Blocks campaign",
+  "scope": "Existing Home Lab Workshop / Orbit application",
+  "automated": {
+    "networkSuitesPassed": 30,
+    "orbitTestsPassed": 67,
+    "authoredSolutions": 56,
+    "generatedPuzzles": 10000,
+    "saveRestoreCycles": 5000,
+    "uiLifecycleCycles": 300,
+    "checks": [
+      "binary and mask conversions",
+      "noncontiguous masks",
+      "RFC 1918 and special-use boundaries",
+      "192.168.1.130/26 regression",
+      "/31 and /32 exceptions",
+      "same-subnet checks across octets",
+      "wrong IP/mask/gateway/DNS and DHCP service",
+      "unapplied changes and partial repair rejection",
+      "single-state OS settings, commands and packet traces",
+      "bounded saves and malformed-state command handling",
+      "loopback with cable disconnected",
+      "separate DNS lookup and data route",
+      "legacy launcher callbacks and one game DOM instance"
+    ]
+  },
+  "browser": {
+    "engine": "Chromium in Codex in-app browser",
+    "build": "production dist served locally on 8783",
+    "viewports": [
+      {
+        "width": 1280,
+        "height": 900
+      },
+      {
+        "width": 768,
+        "height": 1024
+      },
+      {
+        "width": 390,
+        "height": 844
+      }
+    ],
+    "played": [
+      "c1-1",
+      "c1-2",
+      "c1-3",
+      "c1-4",
+      "c3-1",
+      "c5-3",
+      "c6-4",
+      "c7-2",
+      "c7-3",
+      "c8-2",
+      "c8-3"
+    ],
+    "actions": [
+      "keyboard bit switching and mask slider",
+      "tap-select/tap-place octets and subnet/range tiles",
+      "octet-to-binary expansion",
+      "numeric ping succeeds while DNS lookup fails",
+      "DNS repair",
+      "Windows ipconfig model, Linux ip route and macOS ifconfig/route console",
+      "DHCP unavailable produces link-local; service plus renewed offer restores connection",
+      "partial gateway-only repair rejected until DNS fixed",
+      "100 actual bit-button toggles",
+      "30 actual OS-selector switches",
+      "reload preserves OS, puzzle and completions",
+      "mute/reduced-motion settings and unlocked cosmetic selection",
+      "original arcade and original Rescue launch",
+      "3D studio navigation",
+      "390px overflow corrected and verified",
+      "768px game controls meet 44px target size (checkbox labels supply hit area)"
+    ],
+    "consoleErrorsObserved": 0
+  },
+  "fixedDuringQA": [
+    "numeric bit target mistakenly treated as hostname",
+    "loopback incorrectly depended on physical link",
+    "animation rerenders interrupted command entry and closed details",
+    "wrong plan fields could pass when a nearby ping worked",
+    "mobile header overflow",
+    "DNS lookup depicted as an inline forwarding hop",
+    "sorter now uses its authored device network",
+    "mask/address board checks reject changed conflicting OS settings"
+  ],
+  "limits": [
+    "Representative missions, not every authored mission, were manually played; all 56 have automated solution and route checks.",
+    "Physical touch hardware, speaker output and browsers beyond this Chromium environment were not verified.",
+    "Stress tests exercise application state and repeated UI interactions, not concurrent-user hosting load.",
+    "OS screens and commands are restricted simulations; no real network packets are sent.",
+    "Original-game progress is retained in its separate storage; new campaign records are not automatically credited from old skills.",
+    "Network+ subnetting extensions are labeled separately from A+ foundations."
+  ]
+}
