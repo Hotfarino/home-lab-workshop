@@ -2,7 +2,7 @@
 
 A beginner learning portal built around an interactive 3D computer lab. Students learn through **read → try → inspect → explain**, with one task visible at a time.
 
-This is a separate companion to Home Lab Workshop. It does not modify the networking lab or include the broader study hub.
+This workspace is part of the [Home Lab Workshop portfolio](../README.md). It has its own source, lessons, games and browser progress; the broader study hub is not included.
 
 ## Learning paths
 
@@ -16,7 +16,6 @@ This is a separate companion to Home Lab Workshop. It does not modify the networ
 | PowerShell automation | 4 | Messages, variables, saved reports and service inspection |
 | Build a learning VM | 5 | Exact resources, guest boot, separate console, checkpoints and recovery |
 | Independent support challenge | 3 | Filter evidence, document findings and repair a script |
-
 | Linux fieldwork | 8 | Paths, append vs overwrite, file evidence, deletion behavior |
 | Windows support desk | 8 | Explorer operations, process diagnosis, verification and handoff |
 | macOS files & recovery | 7 | Finder, Get Info, Trash/Put Back and Activity Monitor |
@@ -96,9 +95,9 @@ Automated checks exercise all non-Python lesson solutions and all Python lessons
 
 Browser QA additionally covers first-task entry, Linux commands, real Python output and Stop, wrong/correct VM configuration, guest-console context, checkpoint restoration, search, Mac console, and responsive overflow. Automated coverage is not a claim of full real-OS compatibility.
 
-## Current extension validation
+## Earlier OS-interface validation
 
-27 automated tests pass, including every Python exercise against the actual bundled runtime, original lesson preservation, GUI/shell state consistency, GUI deletion and restoration across reload, process protection, all new course solutions, and object pipeline error handling. Browser walkthrough completed: the full Windows support and macOS recovery paths, invalid process-selection feedback, file copy/rename/Trash restore, shared shell verification, Orbit guidance, search, app window controls, and voice Preview/Stop controls were exercised. Desktop and 390 px phone layouts were visually reviewed; the phone page had no horizontal overflow. The browser console reported no warnings or errors in the checked session. Audibility and every installed device voice were not independently verified. QA-only path progress was reset; the original learner path was preserved. The local HTTP server responds successfully.
+At this stage, 27 automated tests passed, including every Python exercise against the actual bundled runtime, original lesson preservation, GUI/shell state consistency, GUI deletion and restoration across reload, process protection, all new course solutions, and object pipeline error handling. Browser walkthrough completed: the full Windows support and macOS recovery paths, invalid process-selection feedback, file copy/rename/Trash restore, shared shell verification, Orbit guidance, search, app window controls, and voice Preview/Stop controls were exercised. Desktop and 390 px phone layouts were visually reviewed; the phone page had no horizontal overflow. The browser console reported no warnings or errors in the checked session. Audibility and every installed device voice were not independently verified. QA-only path progress was reset; the original learner path was preserved. The local HTTP server responds successfully.
 
 The build adds a content revision to local app scripts and styles so a normal refresh loads changes. Narration cancellation no longer reports a playback failure, and Orbit keeps the current goal visible during desktop actions.
 
@@ -107,7 +106,7 @@ These interfaces are functional teaching approximations, not pixel-identical OS 
 
 ## Packet Blocks — network arcade
 
-Open `http://127.0.0.1:8782/#packet-blocks` or use **Packet Blocks** in the header or computer dock. This is an original block-stacking game inside the same simulated workstation and 3D studio. The laptop screen reflects the game board.
+[Open Packet Blocks](https://hotfarino.github.io/home-lab-workshop/orbit/#packet-blocks), or open **Packet Rescue → Packet Blocks practice**. This is an original block-stacking game inside the same simulated workstation and 3D studio. The laptop screen reflects the game board.
 
 Four stages each have eight question templates (32 rounds total): Binary Bay, Address Avenue, Mask Factory, and Subnet Station. Binary/subnet numbers and answer order vary on repeat runs; initial examples remain simple. Guided mode is untimed. Arcade mode starts gravity only after a correct answer and an explicit Deploy. Every answer has a mathematical or conceptual explanation. Solve, read, deploy, stack, and clear rows.
 
@@ -125,7 +124,7 @@ In Packet Blocks, Guided mode automatically coaches the first three Binary Bay r
 
 ### Packet Rescue: play the network
 
-Open `http://127.0.0.1:8782/#packet-rescue` (or choose Packet Rescue in a workstation). It stays inside the existing 3D studio; the current game appears on the active laptop’s screen. The earlier Packet Blocks practice is reachable from the adventure home.
+[Open Packet Rescue](https://hotfarino.github.io/home-lab-workshop/orbit/#packet-rescue), or choose Packet Rescue in a workstation. It stays inside the existing 3D studio; the current game appears on the active laptop’s screen. The earlier Packet Blocks practice is reachable from the adventure home.
 
 - **Bit Builder:** six missions (1, 5, 13, 42, 77, 192). Drag a value block into the decoder or tap it; tap lit blocks to remove them. The exact sum reconnects the device. Orbit reacts to the remaining amount and extra bits.
 - **Subnet Slicer:** six conventional LAN missions. Drag a native keyboard-accessible divider or select /24–/30. The binary mask, address range, capacity and explanation update live. Send a test packet to validate the smallest subnet that fits. Larger subnets are correctly described as workable but outside this mission’s optimization goal. /31 and /32 exceptions are explained in the reference.
@@ -133,7 +132,7 @@ Open `http://127.0.0.1:8782/#packet-rescue` (or choose Packet Rescue in a workst
 - **Coaching:** short inline feedback, optional next-move clues, linked definitions, fuller reasoning and device-voice narration. Optional synthesized chimes, packet animation and reduced-motion support. No timers or lives interrupt beginner practice.
 - **Scope:** original educational missions; no official exam-question claim. Packet movement and device recovery are visual teaching metaphors, not real network traffic.
 
-Automated checks cover all nonzero octet targets, every LAN host requirement from 1–254, deterministic remixes, correct-only completion, duplicate credit, and malformed saved runs. Browser QA completes all 12 missions and checks dragging, keyboard controls, wrong answers, resume, game switching, search, and narrow layouts.
+Automated checks cover all nonzero octet targets, every LAN host requirement from 1–254, deterministic remixes, correct-only completion, duplicate credit, and malformed saved runs. Browser QA completed the initial two sectors’ 12 missions and checks dragging, keyboard controls, wrong answers, resume, game switching, search, and narrow layouts.
 
 ### Packet Delivery
 
