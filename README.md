@@ -70,6 +70,14 @@ scripts/build-pages.mjs    Combined static build and local-reference validation
 
 Networking checks run with `npm run test:network`; Orbit checks run with `npm run test:orbit`. DOM tests stub WebGL and do not replace visual browser checks. The build validates relative links/imports for GitHub's `/home-lab-workshop/` project path. Tests, snapshots, editable Blender sources, personal progress exports, npm dependencies and Git metadata are excluded from the published website.
 
+## Walkthrough verification
+
+The October 21, 2026 release audit combined browser walkthroughs with automated checks. Browser coverage included all 93 Orbit tasks, 24 Packet Rescue missions, 32 guided Packet Blocks rounds, the seven networking course completion paths (reusing validated foundations where offered), six independent network challenges, and the RAID guide's read/write, parity, rebuild, capacity, flashcard and quiz activities. Free Build was checked separately without its optional orientation checklist.
+
+The audit corrected hidden cloud controls inside the laptop, script output leaking visually between lesson contexts, Free Build starting with a checklist, and misleading driver/cloud coaching. Wrong VM resources, bad DNS, wrong passwords and failed packet routes were tested as negative cases. Network export/import restored a completed build.
+
+[Walkthrough observations](audits/public-walkthrough.json) record the tested actions; they are not a claim of exhaustive coverage. Automated checks cover 30 networking suites and 57 Orbit tests, including all 253 network task occurrences with shared foundations. Browser checks used Chromium in the in-app browser; narrow layouts were inspected at 390 and 768 pixels alongside desktop views. Audio controls were exercised, but speaker output and every browser/device combination were not independently verified. OS interfaces, packets and hardware remain teaching simulations.
+
 ## Scope and privacy
 
 This is an independent educational project covering selected CompTIA A+ foundations, with deeper scripting and subnet practice. It is not official CompTIA training or a copy of CertMaster. Reference links and simulation limits appear inside the labs.

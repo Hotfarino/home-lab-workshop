@@ -1,4 +1,4 @@
-import {coachMarkup} from './lab-coach.js?v=class47';
+import {coachMarkup} from './lab-coach.js?v=audit48';
 import {screenPolicy,screenSession} from './lab-screen-policy.js?v=class47';
 import * as E from './lab-engine.js?v=class47';
 import {context,address,changeAddress,request,runCommand,subnet} from './lab-os-engine.js?v=class47';

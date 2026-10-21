@@ -22,7 +22,7 @@ run(fs.readFileSync('lab-ux.js','utf8').replaceAll('export function','function')
 
 const submit=id=>$(id).dispatchEvent(new Event('submit',{bubbles:true,cancelable:true}));
 for(const mission of ['wired','nas','virtual','wifi','routed','cloud','trouble','free']){
- run(`start('${mission}')`);const steps=run('learning.steps');assert.ok(steps.length>4);assert.equal($('learningGuide').hidden,false);
+ run(`start('${mission}')`);if(mission==='free'){assert.equal($('learningGuide').hidden,true,'Free build starts without a checklist');run("learning.setMode('guided')");}const steps=run('learning.steps');assert.ok(steps.length>4);assert.equal($('learningGuide').hidden,false);
  for(let i=0;i<steps.length;i++){
   const st=steps[i];ctx.spec=st;assert.equal(run('s.walkthrough.index'),i);assert.equal($('learningTaskTitle').textContent,st.title);
   if(st.add)click('learningAction');

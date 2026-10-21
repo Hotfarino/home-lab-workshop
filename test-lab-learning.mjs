@@ -66,3 +66,8 @@ $('learningMode').value='guided';$('learningMode').dispatchEvent(new Event('chan
 run("E.connect(s,by('laptop').id,'ac','wall','out1','power',6);render()");
 assert.equal(document.querySelectorAll('.learning-destination').length,0);assert.equal(run('learning.connection().complete'),true);
 console.log('PASS: one exact guided destination, explicit connection close-up action, practice/free exclusion and beacon removal after success.');
+
+run("start('free')");assert.equal($('learningGuide').hidden,true);
+assert.equal(run('learning.progress().mode'),'free');
+run("start('wired')");assert.equal($('learningGuide').hidden,false);
+assert.equal(run('learning.progress().mode'),'guided');
