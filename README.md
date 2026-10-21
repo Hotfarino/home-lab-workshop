@@ -15,7 +15,7 @@ A collection of browser-based labs for learning networking, operating systems, s
 | **Home Lab Workshop** | Cabling, power, rack equipment, IPv4, DHCP, DNS, Wi-Fi, RAID, VMs and fault diagnosis | [Networking lab](https://hotfarino.github.io/home-lab-workshop/home-lab.html) |
 | **Orbit OS & Scripting Lab** | Windows/PowerShell, Ubuntu/Bash, macOS/zsh, files, processes, Python and virtual machines | [OS and scripting](https://hotfarino.github.io/home-lab-workshop/orbit/) |
 | **Packet Rescue** | Bit Builder, Subnet Slicer, Packet Delivery and Network Repair with Orbit coaching | [Play Packet Rescue](https://hotfarino.github.io/home-lab-workshop/orbit/#packet-rescue) |
-| **Packet Blocks** | Binary, IPv4 and subnet practice with guided and falling-block modes | [Play Packet Blocks](https://hotfarino.github.io/home-lab-workshop/orbit/#packet-blocks) |
+| **Packet Blocks** | Eight chapters, 32 rounds, 24 aligned rescues, shared OS network settings and Orbit coaching | [Play Packet Blocks](https://hotfarino.github.io/home-lab-workshop/orbit/#packet-blocks) |
 | **RAID workflow guide** | Striping, mirroring, parity, disk failure and rebuilds | [Explore RAID](https://hotfarino.github.io/home-lab-workshop/raid-workflow.html) |
 
 The networking lab has **8 paths**, including free build, and 6 independent challenges. Orbit has **15 learning paths with 93 tasks**. Packet Rescue has **24 missions across 4 sectors**. Counts describe curriculum organization, not unique skills: network paths share foundation tasks. [Networking lab details](NETWORK-LAB.md) · [Orbit lab details](orbit/README.md)
@@ -97,3 +97,9 @@ Use this description only to represent work and technical decisions you can expl
 Preserve [network artwork credits](lab-os-artwork-credits.txt), the [Three.js license](three-license.txt), [Orbit asset provenance](orbit/ASSETS.md), and bundled Ubuntu/Yaru/Pyodide notices. Product names and artwork belong to their respective owners; no affiliation or endorsement is implied.
 
 [Report an issue](https://github.com/Hotfarino/home-lab-workshop/issues) with the lab name, mission/task, browser, steps to reproduce and expected versus actual behavior. Screenshots help. Review exported files before attaching them.
+
+## Packet Blocks campaign update
+
+[Launch Packet Blocks](https://hotfarino.github.io/home-lab-workshop/orbit/#packet-blocks) for an untimed eight-chapter progression from four-bit training through DHCP/DNS and subnet troubleshooting. The original arcade and Rescue games remain in Mission map, preserving their saves. [Curriculum, sources and limitations](orbit/README.md#packet-blocks-campaign).
+
+The campaign update passed 30 networking suites and 67 Orbit tests. Its additional stress tests cover 10,000 generated puzzles, 5,000 save/restore cycles and 300 UI lifecycle cycles. Browser smoke testing played representative early, middle and late missions; tested 100 bit toggles, 30 OS switches, reload, optional commands, reduced motion and layouts at 390/768/1280 pixels. [Detailed test record](audits/packet-blocks.json). These checks do not constitute exhaustive cross-browser or physical-touch-device certification. The earlier walkthrough above refers to the preserved original games.
