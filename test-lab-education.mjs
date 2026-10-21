@@ -38,3 +38,10 @@ const cloud=buildTemplate('vm'),host=device(cloud,'server');Object.assign(cloud.
 const isolated=buildTemplate('vm'),iv=isolated.vms.find(v=>v.name==='Web-Lab');iv.mode='private';isolated.walkthrough={privateVmTest:true};const isolate=task('virtual','Observe Private isolation');assert.ok(isolate.pass(isolated));iv.ram=2;assert.equal(isolate.pass(isolated),false,'expected isolation failure cannot hide wrong guest resources');iv.ram=4;device(isolated,'laptop').on=false;assert.equal(isolate.pass(isolated),false,'expected isolation failure cannot hide a broken physical client');
 
 for(const id of Object.keys(challengeCases)){const deleted=createChallenge(id);deleted.devices=deleted.devices.filter(x=>x.type!=='laptop');assert.equal(challengeResult(deleted).ok,false);assert.match(challengeResult(deleted).checks[0].detail,/Missing laptop/);}
+
+// A driver is software; it must not be classified as a storage drive.
+const driversLesson=coachLesson(task('wired','Load drivers and enable virtualization'));
+assert.equal(driversLesson.terms.some(t=>t.id==='raid'),false);
+assert.doesNotMatch(driversLesson.analogy,/parity|puzzle/);
+const cloudLesson=coachLesson(task('cloud','Choose a cloud responsibility model'));
+assert.match(cloudLesson.analogy,/rental agreements/);

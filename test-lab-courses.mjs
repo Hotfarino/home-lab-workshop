@@ -15,7 +15,7 @@ const ctx=vm.createContext({makeFoundation,checkpointStart,foundationKey,E,portS
 const run=x=>vm.runInContext(x,ctx),$=x=>document.getElementById(x),click=x=>$(x).dispatchEvent(new Event('click',{bubbles:true})),change=(x,v)=>{$(x).checked=v;$(x).dispatchEvent(new Event('change',{bubbles:true}));};
 run(fs.readFileSync('lab-ux.js','utf8').replaceAll('export function','function'));run(fs.readFileSync('lab-app.js','utf8').replace(/^import .*;$/gm,''));
 for(const mission of ['nas','virtual','wifi','routed','cloud','trouble','free']){
- run(`start('${mission}')`);const steps=run('learning.steps');assert.ok(steps.length>4);assert.equal($('learningGuide').hidden,false);
+ run(`start('${mission}')`);if(mission==='free'){assert.equal($('learningGuide').hidden,true,'Free build starts without a checklist');run("learning.setMode('guided')");}const steps=run('learning.steps');assert.ok(steps.length>4);assert.equal($('learningGuide').hidden,false);
  for(let i=0;i<steps.length;i++){
   const st=steps[i];ctx.spec=st;assert.equal(run('s.walkthrough.index'),i);assert.equal($('learningTaskTitle').textContent,st.title);
   if(st.add)click('learningAction');

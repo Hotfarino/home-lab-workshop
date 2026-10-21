@@ -1,6 +1,6 @@
-import {coachLesson,coachMarkup} from './lab-coach.js?v=class47';
+import {coachLesson,coachMarkup} from './lab-coach.js?v=audit48';
 import {checkedTask} from './lab-task-checks.js?v=class47';
-import {buildCourse,courseChapters,courseNames} from './lab-courses.js?v=class47';
+import {buildCourse,courseChapters,courseNames} from './lab-courses.js?v=audit48';
 import * as E from './lab-engine.js?v=class47';
 const device=(s,type)=>E.ofType(s,type)[0];
 const id=(s,type,n=0)=>['wall','isp'].includes(type)?type:E.ofType(s,type)[n]?.id;
@@ -132,5 +132,5 @@ export function setupLearningGuide(api){
  function connection(){const step=steps[current()];if(!active()||!step?.a)return null;return {a:id(state(),step.a,step.aNth||0),ap:step.ap,b:id(state(),step.b),bp:step.bp,cable:step.cable,guided:mode==='guided',complete:!!step.pass(state())};}
  function recordTest(spec,r){const st=steps[current()];if(!st)return;let expected=null,flag=null;if(st.runTest){expected={source:id(state(),'laptop'),target:typeof st.runTest.target==='function'?st.runTest.target(state()):st.runTest.target,protocol:st.runTest.protocol};flag=st.runTest.flag;}else if(st.test){expected={source:id(state(),st.test==='server'?'server':'laptop'),target:st.test==='vm'?state().vms.find(v=>v.name==='Web-Lab')?.id:'internet',protocol:'https'};flag=st.testFlag||(st.test==='web'?'webTest':st.test==='server'?'serverTest':'vmTest');}if(expected&&expected.source===spec.source&&expected.target===spec.target&&expected.protocol===spec.protocol){state().walkthrough[flag]=r.ok===(st.expectedOk!==false);refresh();}}
  function info(){const st=steps[current()];return active()&&st?{index:current(),title:st.title,instruction:showingHints()?st.instruction:'Complete the task. Hints are off.',coach:mode==='guided'?coachLesson(st):null,pass:!!st.pass(state()),issues:showingHints()&&!st.pass(state())?(st.issues?.(state())||[]):[],screen:!!(st.settings||st.test||st.runTest||st.panel==='vm')}:null;}
- refresh();return {refresh,get steps(){return steps},connection,recordTest,info,progress:()=>({index:current(),total:steps.length,mode:state().assessment?'challenge':mode}),action,next:()=>{const st=steps[current()];if(st?.pass(state()))advance(1);}};
+ refresh();return {refresh,setMode,get steps(){return steps},connection,recordTest,info,progress:()=>({index:current(),total:steps.length,mode:state().assessment?'challenge':mode}),action,next:()=>{const st=steps[current()];if(st?.pass(state()))advance(1);}};
 }

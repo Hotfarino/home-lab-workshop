@@ -1,5 +1,5 @@
-import {learningSteps} from './lab-learning.js?v=class47';
-import {courseDescription} from './lab-courses.js?v=class47';
+import {learningSteps} from './lab-learning.js?v=audit48';
+import {courseDescription} from './lab-courses.js?v=audit48';
 // Presentation only. Reuse existing controls and handlers; never change lab state.
 export function setupPresentation(api={}){
  const $=id=>document.getElementById(id),world=$('worldLab');if(!world)return;

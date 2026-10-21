@@ -1,0 +1,1299 @@
+[
+  {
+    "lab": "Orbit",
+    "path": "Your first terminal",
+    "task": "Meet your Linux laptop",
+    "result": "pass; premature check rejected"
+  },
+  {
+    "lab": "Orbit",
+    "path": "Your first terminal",
+    "task": "Find your starting point",
+    "result": "pass",
+    "example": "pwd"
+  },
+  {
+    "lab": "Orbit",
+    "path": "Your first terminal",
+    "task": "Look inside the folder",
+    "result": "pass",
+    "example": "ls"
+  },
+  {
+    "lab": "Orbit",
+    "path": "Your first terminal",
+    "task": "Read your welcome file",
+    "result": "pass",
+    "example": "cat welcome.txt"
+  },
+  {
+    "lab": "Orbit",
+    "path": "Your first terminal",
+    "task": "Identify your account",
+    "result": "pass",
+    "example": "whoami"
+  },
+  {
+    "lab": "Orbit",
+    "path": "Your first terminal",
+    "task": "Ask the manual",
+    "result": "pass",
+    "example": "man ls"
+  },
+  {
+    "lab": "Orbit",
+    "path": "Linux files & Bash",
+    "task": "Make a project folder",
+    "result": "pass"
+  },
+  {
+    "lab": "Orbit",
+    "path": "Linux files & Bash",
+    "task": "Step into your folder",
+    "result": "pass"
+  },
+  {
+    "lab": "Orbit",
+    "path": "Linux files & Bash",
+    "task": "Create a text note",
+    "result": "pass"
+  },
+  {
+    "lab": "Orbit",
+    "path": "Linux files & Bash",
+    "task": "Keep a second copy",
+    "result": "pass"
+  },
+  {
+    "lab": "Orbit",
+    "path": "Linux files & Bash",
+    "task": "Verify your work",
+    "result": "pass"
+  },
+  {
+    "lab": "Orbit",
+    "path": "Linux files & Bash",
+    "task": "Write your first Bash script",
+    "result": "pass"
+  },
+  {
+    "lab": "Orbit",
+    "path": "Windows & PowerShell",
+    "task": "Read the prompt",
+    "result": "pass"
+  },
+  {
+    "lab": "Orbit",
+    "path": "Windows & PowerShell",
+    "task": "Discover commands",
+    "result": "pass"
+  },
+  {
+    "lab": "Orbit",
+    "path": "Windows & PowerShell",
+    "task": "Read command help",
+    "result": "pass"
+  },
+  {
+    "lab": "Orbit",
+    "path": "Windows & PowerShell",
+    "task": "Inspect running programs",
+    "result": "pass"
+  },
+  {
+    "lab": "Orbit",
+    "path": "Windows & PowerShell",
+    "task": "Select just the details you need",
+    "result": "pass"
+  },
+  {
+    "lab": "Orbit",
+    "path": "Windows & PowerShell",
+    "task": "Inspect network settings",
+    "result": "pass"
+  },
+  {
+    "lab": "Orbit",
+    "path": "macOS & zsh",
+    "task": "Locate your Mac home",
+    "result": "pass"
+  },
+  {
+    "lab": "Orbit",
+    "path": "macOS & zsh",
+    "task": "Browse from Terminal",
+    "result": "pass"
+  },
+  {
+    "lab": "Orbit",
+    "path": "macOS & zsh",
+    "task": "Create a scripts folder",
+    "result": "pass"
+  },
+  {
+    "lab": "Orbit",
+    "path": "macOS & zsh",
+    "task": "Read the Mac network interface",
+    "result": "pass"
+  },
+  {
+    "lab": "Orbit",
+    "path": "macOS & zsh",
+    "task": "Find the manual",
+    "result": "pass"
+  },
+  {
+    "lab": "Orbit",
+    "path": "Python from zero",
+    "task": "Make Python speak",
+    "result": "pass"
+  },
+  {
+    "lab": "Orbit",
+    "path": "Python from zero",
+    "task": "Give a value a name",
+    "result": "pass"
+  },
+  {
+    "lab": "Orbit",
+    "path": "Python from zero",
+    "task": "Calculate free memory",
+    "result": "pass"
+  },
+  {
+    "lab": "Orbit",
+    "path": "Python from zero",
+    "task": "Group your devices",
+    "result": "pass"
+  },
+  {
+    "lab": "Orbit",
+    "path": "Python from zero",
+    "task": "Repeat a useful action",
+    "result": "pass"
+  },
+  {
+    "lab": "Orbit",
+    "path": "Python from zero",
+    "task": "Choose a path",
+    "result": "pass"
+  },
+  {
+    "lab": "Orbit",
+    "path": "Python from zero",
+    "task": "Build a reusable tool",
+    "result": "pass"
+  },
+  {
+    "lab": "Orbit",
+    "path": "Python from zero",
+    "task": "Save a real Python report",
+    "result": "pass"
+  },
+  {
+    "lab": "Orbit",
+    "path": "PowerShell automation",
+    "task": "Print a status message",
+    "result": "pass"
+  },
+  {
+    "lab": "Orbit",
+    "path": "PowerShell automation",
+    "task": "Use a PowerShell variable",
+    "result": "pass"
+  },
+  {
+    "lab": "Orbit",
+    "path": "PowerShell automation",
+    "task": "Create a report file",
+    "result": "pass"
+  },
+  {
+    "lab": "Orbit",
+    "path": "PowerShell automation",
+    "task": "Check background services",
+    "result": "pass"
+  },
+  {
+    "lab": "Orbit",
+    "path": "Python inventory project",
+    "task": "Represent one real device",
+    "result": "pass"
+  },
+  {
+    "lab": "Orbit",
+    "path": "Python inventory project",
+    "task": "Read a structured message",
+    "result": "pass"
+  },
+  {
+    "lab": "Orbit",
+    "path": "Python inventory project",
+    "task": "Select devices that need attention",
+    "result": "pass"
+  },
+  {
+    "lab": "Orbit",
+    "path": "Python inventory project",
+    "task": "Accumulate resource totals",
+    "result": "pass"
+  },
+  {
+    "lab": "Orbit",
+    "path": "Python inventory project",
+    "task": "Separate the decision from output",
+    "result": "pass"
+  },
+  {
+    "lab": "Orbit",
+    "path": "Python inventory project",
+    "task": "Make output predictable",
+    "result": "pass"
+  },
+  {
+    "lab": "Orbit",
+    "path": "Python inventory project",
+    "task": "Write a structured report",
+    "result": "pass"
+  },
+  {
+    "lab": "Orbit",
+    "path": "Python inventory project",
+    "task": "Verify the saved data path",
+    "result": "pass"
+  },
+  {
+    "lab": "Orbit",
+    "path": "Reliable Python automation",
+    "task": "Convert text into a useful number",
+    "result": "pass"
+  },
+  {
+    "lab": "Orbit",
+    "path": "Reliable Python automation",
+    "task": "Handle the expected failure",
+    "result": "pass"
+  },
+  {
+    "lab": "Orbit",
+    "path": "Reliable Python automation",
+    "task": "Validate meaning, not just type",
+    "result": "pass"
+  },
+  {
+    "lab": "Orbit",
+    "path": "Reliable Python automation",
+    "task": "Make the checks repeatable",
+    "result": "pass"
+  },
+  {
+    "lab": "Orbit",
+    "path": "Reliable Python automation",
+    "task": "Recover from a missing file",
+    "result": "pass"
+  },
+  {
+    "lab": "Orbit",
+    "path": "Reliable Python automation",
+    "task": "Report valid and invalid inputs separately",
+    "result": "pass"
+  },
+  {
+    "lab": "Orbit",
+    "path": "PowerShell evidence pipeline",
+    "task": "Inspect useful process properties",
+    "result": "pass"
+  },
+  {
+    "lab": "Orbit",
+    "path": "PowerShell evidence pipeline",
+    "task": "Filter one exact process",
+    "result": "pass"
+  },
+  {
+    "lab": "Orbit",
+    "path": "PowerShell evidence pipeline",
+    "task": "Order memory usage",
+    "result": "pass"
+  },
+  {
+    "lab": "Orbit",
+    "path": "PowerShell evidence pipeline",
+    "task": "Find a stopped service",
+    "result": "pass"
+  },
+  {
+    "lab": "Orbit",
+    "path": "PowerShell evidence pipeline",
+    "task": "Calculate a defined total",
+    "result": "pass"
+  },
+  {
+    "lab": "Orbit",
+    "path": "PowerShell evidence pipeline",
+    "task": "Create a reusable CSV report",
+    "result": "pass"
+  },
+  {
+    "lab": "Orbit",
+    "path": "PowerShell evidence pipeline",
+    "task": "Verify the exported artifact",
+    "result": "pass"
+  },
+  {
+    "lab": "Orbit",
+    "path": "Linux fieldwork",
+    "task": "Navigate with an absolute path",
+    "result": "pass"
+  },
+  {
+    "lab": "Orbit",
+    "path": "Linux fieldwork",
+    "task": "Write the first observation",
+    "result": "pass"
+  },
+  {
+    "lab": "Orbit",
+    "path": "Linux fieldwork",
+    "task": "Add evidence without erasing it",
+    "result": "pass"
+  },
+  {
+    "lab": "Orbit",
+    "path": "Linux fieldwork",
+    "task": "Give the report a useful name",
+    "result": "pass"
+  },
+  {
+    "lab": "Orbit",
+    "path": "Linux fieldwork",
+    "task": "Filter the evidence",
+    "result": "pass"
+  },
+  {
+    "lab": "Orbit",
+    "path": "Linux fieldwork",
+    "task": "Write a repeatable handoff",
+    "result": "pass"
+  },
+  {
+    "lab": "Orbit",
+    "path": "Linux fieldwork",
+    "task": "Inspect the same file visually",
+    "result": "pass"
+  },
+  {
+    "lab": "Orbit",
+    "path": "Linux fieldwork",
+    "task": "Understand deletion before using it",
+    "result": "pass"
+  },
+  {
+    "lab": "Orbit",
+    "path": "Windows support desk",
+    "task": "Organize the case",
+    "result": "pass"
+  },
+  {
+    "lab": "Orbit",
+    "path": "Windows support desk",
+    "task": "Copy the welcome note",
+    "result": "pass"
+  },
+  {
+    "lab": "Orbit",
+    "path": "Windows support desk",
+    "task": "Rename the working copy",
+    "result": "pass"
+  },
+  {
+    "lab": "Orbit",
+    "path": "Windows support desk",
+    "task": "Reproduce the reported symptom",
+    "result": "pass"
+  },
+  {
+    "lab": "Orbit",
+    "path": "Windows support desk",
+    "task": "Identify the exact process",
+    "result": "pass"
+  },
+  {
+    "lab": "Orbit",
+    "path": "Windows support desk",
+    "task": "Stop the known practice workload",
+    "result": "pass"
+  },
+  {
+    "lab": "Orbit",
+    "path": "Windows support desk",
+    "task": "Verify with a second tool",
+    "result": "pass"
+  },
+  {
+    "lab": "Orbit",
+    "path": "Windows support desk",
+    "task": "Close the support loop",
+    "result": "pass"
+  },
+  {
+    "lab": "Orbit",
+    "path": "macOS files & recovery",
+    "task": "Inspect a file before changing it",
+    "result": "pass"
+  },
+  {
+    "lab": "Orbit",
+    "path": "macOS files & recovery",
+    "task": "Practice a recoverable deletion",
+    "result": "pass"
+  },
+  {
+    "lab": "Orbit",
+    "path": "macOS files & recovery",
+    "task": "Put the file back",
+    "result": "pass"
+  },
+  {
+    "lab": "Orbit",
+    "path": "macOS files & recovery",
+    "task": "Confirm recovery from Terminal",
+    "result": "pass"
+  },
+  {
+    "lab": "Orbit",
+    "path": "macOS files & recovery",
+    "task": "Start a known workload",
+    "result": "pass"
+  },
+  {
+    "lab": "Orbit",
+    "path": "macOS files & recovery",
+    "task": "Force quit only the identified app",
+    "result": "pass"
+  },
+  {
+    "lab": "Orbit",
+    "path": "macOS files & recovery",
+    "task": "Explain the recovery",
+    "result": "pass"
+  },
+  {
+    "lab": "Orbit",
+    "path": "Build a learning VM",
+    "task": "Configure the guest",
+    "result": "pass"
+  },
+  {
+    "lab": "Orbit",
+    "path": "Build a learning VM",
+    "task": "Start the guest",
+    "result": "pass"
+  },
+  {
+    "lab": "Orbit",
+    "path": "Build a learning VM",
+    "task": "Enter the Ubuntu guest",
+    "result": "pass"
+  },
+  {
+    "lab": "Orbit",
+    "path": "Build a learning VM",
+    "task": "Create a rollback point",
+    "result": "pass"
+  },
+  {
+    "lab": "Orbit",
+    "path": "Build a learning VM",
+    "task": "Practice recovery",
+    "result": "pass"
+  },
+  {
+    "lab": "Orbit",
+    "path": "VM change & recovery lab",
+    "task": "Build an isolated test guest",
+    "result": "pass"
+  },
+  {
+    "lab": "Orbit",
+    "path": "VM change & recovery lab",
+    "task": "Create a guest baseline",
+    "result": "pass"
+  },
+  {
+    "lab": "Orbit",
+    "path": "VM change & recovery lab",
+    "task": "Capture the baseline",
+    "result": "pass"
+  },
+  {
+    "lab": "Orbit",
+    "path": "VM change & recovery lab",
+    "task": "Make a deliberate change",
+    "result": "pass"
+  },
+  {
+    "lab": "Orbit",
+    "path": "VM change & recovery lab",
+    "task": "Restore the checkpoint",
+    "result": "pass"
+  },
+  {
+    "lab": "Orbit",
+    "path": "VM change & recovery lab",
+    "task": "Prove rollback worked",
+    "result": "pass"
+  },
+  {
+    "lab": "Orbit",
+    "path": "Independent support challenge",
+    "task": "Find the offline device",
+    "result": "pass"
+  },
+  {
+    "lab": "Orbit",
+    "path": "Independent support challenge",
+    "task": "Document the finding",
+    "result": "pass"
+  },
+  {
+    "lab": "Orbit",
+    "path": "Independent support challenge",
+    "result": "issue",
+    "detail": "Code output from Windows support desk remains visible after switching to a new Python task."
+  },
+  {
+    "lab": "Orbit",
+    "path": "Independent support challenge",
+    "task": "Repair a Python error",
+    "result": "pass"
+  },
+  {
+    "lab": "Packet Rescue",
+    "path": "Bit Builder",
+    "task": "Welcome beacon",
+    "result": "pass; wrong signal rejected and reset checked"
+  },
+  {
+    "lab": "Packet Rescue",
+    "path": "Bit Builder",
+    "task": "Workshop laptop",
+    "target": 5,
+    "result": "pass"
+  },
+  {
+    "lab": "Packet Rescue",
+    "path": "Bit Builder",
+    "task": "Robot controller",
+    "target": 13,
+    "result": "pass"
+  },
+  {
+    "lab": "Packet Rescue",
+    "path": "Bit Builder",
+    "task": "Sensor station",
+    "target": 42,
+    "result": "pass"
+  },
+  {
+    "lab": "Packet Rescue",
+    "path": "Bit Builder",
+    "task": "Archive server",
+    "target": 77,
+    "result": "pass"
+  },
+  {
+    "lab": "Packet Rescue",
+    "path": "Bit Builder",
+    "task": "Uplink console",
+    "target": 192,
+    "result": "pass"
+  },
+  {
+    "lab": "Packet Rescue",
+    "path": "Subnet Slicer",
+    "task": "School lab",
+    "needed": 200,
+    "prefix": 24,
+    "result": "pass"
+  },
+  {
+    "lab": "Packet Rescue",
+    "path": "Subnet Slicer",
+    "task": "Robotics room",
+    "needed": 50,
+    "prefix": 26,
+    "result": "pass"
+  },
+  {
+    "lab": "Packet Rescue",
+    "path": "Subnet Slicer",
+    "task": "Design studio",
+    "needed": 25,
+    "prefix": 27,
+    "result": "pass"
+  },
+  {
+    "lab": "Packet Rescue",
+    "path": "Subnet Slicer",
+    "task": "Repair bench",
+    "needed": 12,
+    "prefix": 28,
+    "result": "pass"
+  },
+  {
+    "lab": "Packet Rescue",
+    "path": "Subnet Slicer",
+    "task": "Library wing",
+    "needed": 100,
+    "prefix": 25,
+    "result": "pass"
+  },
+  {
+    "lab": "Packet Rescue",
+    "path": "Subnet Slicer",
+    "task": "Two-device lab",
+    "needed": 2,
+    "prefix": 30,
+    "result": "pass"
+  },
+  {
+    "lab": "Packet Rescue",
+    "path": "Packet Delivery",
+    "task": "Desk to desk",
+    "result": "pass; wrong route, playback, pause and stepping checked"
+  },
+  {
+    "lab": "Packet Rescue",
+    "path": "Packet Delivery",
+    "task": "Across the router",
+    "result": "pass"
+  },
+  {
+    "lab": "Packet Rescue",
+    "path": "Packet Delivery",
+    "task": "The /26 surprise",
+    "route": "gateway",
+    "result": "pass"
+  },
+  {
+    "lab": "Packet Rescue",
+    "path": "Packet Delivery",
+    "task": "One bigger neighborhood",
+    "route": "local",
+    "result": "pass"
+  },
+  {
+    "lab": "Packet Rescue",
+    "path": "Packet Delivery",
+    "task": "The upper-half LAN",
+    "route": "local",
+    "result": "pass"
+  },
+  {
+    "lab": "Packet Rescue",
+    "path": "Packet Delivery",
+    "task": "Across a /16 boundary",
+    "route": "gateway",
+    "result": "pass"
+  },
+  {
+    "lab": "Network Repair",
+    "title": "Offline workbench",
+    "result": "pass",
+    "negative": "Out-of-plan IP correctly blocked all probes"
+  },
+  {
+    "lab": "Network Repair",
+    "title": "Local works, remote fails",
+    "result": "pass"
+  },
+  {
+    "lab": "Network Repair",
+    "title": "The false doorway",
+    "result": "pass"
+  },
+  {
+    "lab": "Network Repair",
+    "title": "No way out",
+    "result": "pass"
+  },
+  {
+    "lab": "Network Repair",
+    "title": "Address at the edge",
+    "result": "pass"
+  },
+  {
+    "lab": "Network Repair",
+    "title": "After the move",
+    "result": "pass"
+  },
+  {
+    "lab": "Packet Blocks",
+    "path": "Binary Bay",
+    "title": "Build 1",
+    "result": "pass",
+    "details": "All 11 walkthrough steps; deploy, left/right, pause/resume, drop and row clear"
+  },
+  {
+    "lab": "Packet Blocks",
+    "path": "Binary Bay",
+    "title": "Build 5 in binary",
+    "result": "pass"
+  },
+  {
+    "lab": "Packet Blocks",
+    "path": "Binary Bay",
+    "title": "Build 13 in binary",
+    "result": "pass"
+  },
+  {
+    "lab": "Packet Blocks",
+    "path": "Binary Bay",
+    "title": "Build 85 in binary",
+    "result": "pass"
+  },
+  {
+    "lab": "Packet Blocks",
+    "path": "Binary Bay",
+    "title": "Build 224 in binary",
+    "result": "pass"
+  },
+  {
+    "lab": "Packet Blocks",
+    "path": "Binary Bay",
+    "title": "Build 200 in binary",
+    "result": "pass"
+  },
+  {
+    "lab": "Packet Blocks",
+    "path": "Binary Bay",
+    "title": "Build 0 in binary",
+    "result": "pass"
+  },
+  {
+    "lab": "Packet Blocks",
+    "path": "Binary Bay",
+    "title": "Build 37 in binary",
+    "result": "pass"
+  },
+  {
+    "lab": "Packet Blocks",
+    "path": "Address Avenue",
+    "title": "How many bits are in IPv4?",
+    "result": "pass"
+  },
+  {
+    "lab": "Packet Blocks",
+    "path": "Address Avenue",
+    "title": "Which address has valid IPv4 format?",
+    "result": "pass"
+  },
+  {
+    "lab": "Packet Blocks",
+    "path": "Address Avenue",
+    "title": "Recognize a private address",
+    "result": "pass"
+  },
+  {
+    "lab": "Packet Blocks",
+    "path": "Address Avenue",
+    "title": "A message to yourself",
+    "result": "pass"
+  },
+  {
+    "lab": "Packet Blocks",
+    "path": "Address Avenue",
+    "title": "Spot link-local addressing",
+    "result": "pass"
+  },
+  {
+    "lab": "Packet Blocks",
+    "path": "Address Avenue",
+    "title": "Read an octet",
+    "result": "pass"
+  },
+  {
+    "lab": "Packet Blocks",
+    "path": "Address Avenue",
+    "title": "Choose the next hop",
+    "result": "pass"
+  },
+  {
+    "lab": "Packet Blocks",
+    "path": "Address Avenue",
+    "title": "Not every 172 address is private",
+    "result": "pass"
+  },
+  {
+    "lab": "Packet Blocks",
+    "path": "Mask Factory",
+    "title": "Build a /24 mask",
+    "result": "pass"
+  },
+  {
+    "lab": "Packet Blocks",
+    "path": "Mask Factory",
+    "title": "Build a /25 mask",
+    "result": "pass"
+  },
+  {
+    "lab": "Packet Blocks",
+    "path": "Mask Factory",
+    "title": "Build a /26 mask",
+    "result": "pass"
+  },
+  {
+    "lab": "Packet Blocks",
+    "path": "Mask Factory",
+    "title": "Build a /27 mask",
+    "result": "pass"
+  },
+  {
+    "lab": "Packet Blocks",
+    "path": "Mask Factory",
+    "title": "Build a /28 mask",
+    "result": "pass"
+  },
+  {
+    "lab": "Packet Blocks",
+    "path": "Mask Factory",
+    "title": "Build a /30 mask",
+    "result": "pass"
+  },
+  {
+    "lab": "Packet Blocks",
+    "path": "Mask Factory",
+    "title": "Build a /20 mask",
+    "result": "pass"
+  },
+  {
+    "lab": "Packet Blocks",
+    "path": "Mask Factory",
+    "title": "Build a /23 mask",
+    "result": "pass"
+  },
+  {
+    "lab": "Packet Blocks",
+    "path": "Subnet Station",
+    "title": "Find the network address",
+    "result": "pass"
+  },
+  {
+    "lab": "Packet Blocks",
+    "path": "Subnet Station",
+    "title": "Find the network address",
+    "result": "pass"
+  },
+  {
+    "lab": "Packet Blocks",
+    "path": "Subnet Station",
+    "title": "Find the broadcast address",
+    "result": "pass"
+  },
+  {
+    "lab": "Packet Blocks",
+    "path": "Subnet Station",
+    "title": "Count usable host addresses",
+    "result": "pass"
+  },
+  {
+    "lab": "Packet Blocks",
+    "path": "Subnet Station",
+    "title": "Find the first usable host",
+    "result": "pass"
+  },
+  {
+    "lab": "Packet Blocks",
+    "path": "Subnet Station",
+    "title": "Find the last usable host",
+    "result": "pass"
+  },
+  {
+    "lab": "Packet Blocks",
+    "path": "Subnet Station",
+    "title": "Count usable host addresses",
+    "result": "pass"
+  },
+  {
+    "lab": "Packet Blocks",
+    "path": "Subnet Station",
+    "title": "Share a subnet or use a router?",
+    "result": "pass"
+  },
+  {
+    "lab": "Home Lab",
+    "path": "Home network → rack server → VMs",
+    "title": "Turn on Laptop client",
+    "result": "pass"
+  },
+  {
+    "lab": "Home Lab",
+    "path": "Home network → rack server → VMs",
+    "title": "Add Rack PDU",
+    "result": "pass"
+  },
+  {
+    "lab": "Home Lab",
+    "path": "Home network → rack server → VMs",
+    "title": "Connect Rack PDU to 120 V wall outlet",
+    "result": "pass"
+  },
+  {
+    "lab": "Home Lab",
+    "path": "Home network → rack server → VMs",
+    "title": "Turn on Rack PDU",
+    "result": "pass"
+  },
+  {
+    "lab": "Home Lab",
+    "path": "Home network → rack server → VMs",
+    "title": "Add Fiber ONT",
+    "result": "pass"
+  },
+  {
+    "lab": "Home Lab",
+    "path": "Home network → rack server → VMs",
+    "title": "Connect Fiber ONT to Rack PDU",
+    "result": "pass"
+  },
+  {
+    "lab": "Home Lab",
+    "path": "Home network → rack server → VMs",
+    "title": "Turn on Fiber ONT",
+    "result": "pass"
+  },
+  {
+    "lab": "Home Lab",
+    "path": "Home network → rack server → VMs",
+    "title": "Add Edge router",
+    "result": "pass"
+  },
+  {
+    "lab": "Home Lab",
+    "path": "Home network → rack server → VMs",
+    "title": "Connect Edge router to Rack PDU",
+    "result": "pass"
+  },
+  {
+    "lab": "Home Lab",
+    "path": "Home network → rack server → VMs",
+    "title": "Turn on Edge router",
+    "result": "pass"
+  },
+  {
+    "lab": "Home Lab",
+    "path": "Home network → rack server → VMs",
+    "title": "Add Managed switch",
+    "result": "pass"
+  },
+  {
+    "lab": "Home Lab",
+    "path": "Home network → rack server → VMs",
+    "title": "Connect Managed switch to Rack PDU",
+    "result": "pass"
+  },
+  {
+    "lab": "Home Lab",
+    "path": "Home network → rack server → VMs",
+    "title": "Turn on Managed switch",
+    "result": "pass"
+  },
+  {
+    "lab": "Home Lab",
+    "path": "Home network → rack server → VMs",
+    "title": "Connect ISP handoff to Fiber ONT",
+    "result": "pass"
+  },
+  {
+    "lab": "Home Lab",
+    "path": "Home network → rack server → VMs",
+    "title": "Connect Fiber ONT to Edge router",
+    "result": "pass"
+  },
+  {
+    "lab": "Home Lab",
+    "path": "Home network → rack server → VMs",
+    "title": "Connect Edge router to Managed switch",
+    "result": "pass"
+  },
+  {
+    "lab": "Home Lab",
+    "path": "Home network → rack server → VMs",
+    "title": "Connect Laptop client to Managed switch",
+    "result": "pass"
+  },
+  {
+    "lab": "Home Lab",
+    "title": "DHCP settings",
+    "result": "pass",
+    "negative": "Incorrect DNS .99 blocked completion with exact correction"
+  },
+  {
+    "lab": "Home Lab",
+    "path": "Home network → rack server → VMs",
+    "title": "Add 2U lab server",
+    "result": "pass"
+  },
+  {
+    "lab": "Home Lab",
+    "path": "Home network → rack server → VMs",
+    "title": "Prepare for safe part installation",
+    "result": "pass"
+  },
+  {
+    "lab": "Home Lab",
+    "path": "Home network → rack server → VMs",
+    "title": "Connect 2U lab server to Rack PDU",
+    "result": "pass"
+  },
+  {
+    "lab": "Home Lab",
+    "path": "Home network → rack server → VMs",
+    "title": "Turn on 2U lab server",
+    "result": "pass"
+  },
+  {
+    "lab": "Home Lab",
+    "path": "Home network → rack server → VMs",
+    "title": "Connect 2U lab server to Managed switch",
+    "result": "pass"
+  },
+  {
+    "lab": "Home Lab",
+    "path": "Home network → rack server → VMs",
+    "result": "pass",
+    "details": "Complete 42-step public-browser build from empty bench through guest HTTPS; socket clicks and native PDU cable drag; incorrect DNS, incompatible CPU, unsupported rack mount and undersized private VM rejected."
+  },
+  {
+    "lab": "Home Lab",
+    "path": "Virtualization",
+    "result": "pass",
+    "details": "Validated foundation; 11 remaining steps including private/internal isolation failures and restored external HTTPS"
+  },
+  {
+    "lab": "Home Lab",
+    "path": "Home network → rack server → VMs",
+    "title": "Add Wi-Fi access point",
+    "result": "pass"
+  },
+  {
+    "lab": "Home Lab",
+    "path": "Home network → rack server → VMs",
+    "title": "Connect ap ETH → switch P3",
+    "result": "pass"
+  },
+  {
+    "lab": "Home Lab",
+    "path": "Home network → rack server → VMs",
+    "title": "Turn on ap",
+    "result": "pass"
+  },
+  {
+    "lab": "Home Lab",
+    "path": "Home network → rack server → VMs",
+    "title": "Configure your wireless network",
+    "result": "pass"
+  },
+  {
+    "lab": "Home Lab",
+    "path": "Home network → rack server → VMs",
+    "title": "Unplug the laptop Ethernet cord",
+    "result": "pass"
+  },
+  {
+    "lab": "Home Lab",
+    "path": "Wireless home office",
+    "result": "pass",
+    "details": "7 specialization steps; incorrect passphrase rejected; native connector drag removes Ethernet; wireless-only Internet test passes"
+  },
+  {
+    "lab": "Home Lab",
+    "path": "Home network → rack server → VMs",
+    "title": "Add a second Laptop client",
+    "result": "pass"
+  },
+  {
+    "lab": "Home Lab",
+    "path": "Home network → rack server → VMs",
+    "title": "Connect laptop 2 AC → wall OUT2",
+    "result": "pass"
+  },
+  {
+    "lab": "Home Lab",
+    "path": "Home network → rack server → VMs",
+    "title": "Turn on laptop 2",
+    "result": "pass"
+  },
+  {
+    "lab": "Home Lab",
+    "path": "Home network → rack server → VMs",
+    "title": "Connect laptop 2 ETH → switch P4",
+    "result": "pass"
+  },
+  {
+    "lab": "Home Lab",
+    "path": "Home network → rack server → VMs",
+    "title": "Connect router LAN2 → switch P5",
+    "result": "pass"
+  },
+  {
+    "lab": "Home Lab",
+    "path": "Route two isolated networks",
+    "result": "pass",
+    "details": "All 9 specialization steps; VLAN20 p4/p5; second client lease .60.100; ICMP between subnets through router"
+  },
+  {
+    "lab": "Home Lab",
+    "path": "Hybrid cloud & backup",
+    "result": "pass-local-fix",
+    "details": "Reproduced invisible Cloud controls publicly. Corrected CSS verified locally through provisioning, backup and recovery verification."
+  },
+  {
+    "lab": "Home Lab",
+    "path": "Home network → rack server → VMs",
+    "title": "Add Four-bay NAS",
+    "result": "pass"
+  },
+  {
+    "lab": "Home Lab",
+    "path": "Home network → rack server → VMs",
+    "title": "Prepare to install NAS drives",
+    "result": "pass"
+  },
+  {
+    "lab": "Home Lab",
+    "path": "Home network → rack server → VMs",
+    "title": "Connect nas AC → pdu OUT4",
+    "result": "pass"
+  },
+  {
+    "lab": "Home Lab",
+    "path": "Home network → rack server → VMs",
+    "title": "Turn on nas",
+    "result": "pass"
+  },
+  {
+    "lab": "Home Lab",
+    "path": "Home network → rack server → VMs",
+    "title": "Connect nas ETH → switch P3",
+    "result": "pass"
+  },
+  {
+    "lab": "Home Lab",
+    "path": "Rack storage & RAID",
+    "result": "pass",
+    "details": "13 specialization steps; RAID5 3TB, SMB, one-drive failure, degraded SMB still succeeds, replacement rebuild"
+  },
+  {
+    "lab": "Home Lab",
+    "path": "Home network → rack server → VMs",
+    "title": "Inspect the failed physical link",
+    "result": "pass"
+  },
+  {
+    "lab": "Home Lab",
+    "path": "Find and repair faults",
+    "result": "pass",
+    "details": "5 tasks; repaired cable, restored DHCP (returned client to automatic), numeric ICMP, corrected DNS, web request"
+  },
+  {
+    "lab": "Independent challenge",
+    "title": "The wired desk is offline",
+    "result": "pass",
+    "details": "20% before repair; 100% after repair; optional hint tracked"
+  },
+  {
+    "lab": "Independent challenge",
+    "title": "IP works; names do not",
+    "result": "pass"
+  },
+  {
+    "lab": "Independent challenge",
+    "title": "A static client cannot leave home",
+    "result": "pass"
+  },
+  {
+    "lab": "Independent challenge",
+    "title": "The wireless client cannot join",
+    "result": "pass"
+  },
+  {
+    "lab": "Independent challenge",
+    "title": "The switch separates the desk",
+    "result": "pass"
+  },
+  {
+    "lab": "Independent challenge",
+    "title": "The guest page is out of reach",
+    "result": "pass"
+  },
+  {
+    "area": "RAID",
+    "path": "RAID 0 · Stripe",
+    "operation": "Write: save a new stripe",
+    "result": "all 6 steps reached"
+  },
+  {
+    "area": "RAID",
+    "path": "RAID 0 · Stripe",
+    "operation": "Read: open stored data",
+    "result": "all 6 steps reached"
+  },
+  {
+    "area": "RAID",
+    "path": "RAID 1 · Mirror",
+    "operation": "Write: save a new stripe",
+    "result": "all 6 steps reached"
+  },
+  {
+    "area": "RAID",
+    "path": "RAID 1 · Mirror",
+    "operation": "Read: open stored data",
+    "result": "all 6 steps reached"
+  },
+  {
+    "area": "RAID",
+    "path": "RAID 5 · Single parity",
+    "operation": "Write: save a new stripe",
+    "result": "all 6 steps reached"
+  },
+  {
+    "area": "RAID",
+    "path": "RAID 5 · Single parity",
+    "operation": "Read: open stored data",
+    "result": "all 6 steps reached"
+  },
+  {
+    "area": "RAID",
+    "path": "RAID 6 · Dual parity",
+    "operation": "Write: save a new stripe",
+    "result": "all 6 steps reached"
+  },
+  {
+    "area": "RAID",
+    "path": "RAID 6 · Dual parity",
+    "operation": "Read: open stored data",
+    "result": "all 6 steps reached"
+  },
+  {
+    "area": "RAID",
+    "path": "RAID 10 · Stripe of mirrors",
+    "operation": "Write: save a new stripe",
+    "result": "all 6 steps reached"
+  },
+  {
+    "area": "RAID",
+    "path": "RAID 10 · Stripe of mirrors",
+    "operation": "Read: open stored data",
+    "result": "all 6 steps reached"
+  },
+  {
+    "area": "RAID",
+    "result": "Parity XOR/change/hide/restart; all 5 levels write/read; failure limits and rebuild; mixed capacity and spare; 5 storage views; 5/5 scenarios; 20 flip cards; 3/3 quiz passed"
+  },
+  {
+    "area": "Supplemental UI",
+    "result": "390px portfolio/RAID/Orbit/network, 768px network + exploded viewer no horizontal page overflow; search definition, voice preview/stop controls, OS minimize/reopen/maximize/close, real Python output isolation, network free/guided modes, 3D camera/socket/explosion/zoom, glossary/manual; Orbit progress download"
+  }
+]
