@@ -3,13 +3,16 @@
   "private": true,
   "version": "1.0.0",
   "type": "module",
-  "description": "Standalone interactive 3D home lab for networking, hardware, RAID and virtualization practice.",
+  "description": "Virtual IT lab portfolio: networking, operating systems, scripting, virtualization and packet troubleshooting.",
   "engines": {
     "node": ">=24"
   },
   "scripts": {
-    "test": "node run-tests.mjs",
-    "build": "node scripts/build-pages.mjs"
+    "test": "npm run test:network && npm run test:orbit",
+    "test:network": "node run-tests.mjs",
+    "test:orbit": "npm --prefix orbit test",
+    "build": "node scripts/build-pages.mjs",
+    "serve": "python3 -m http.server 8783 --bind 127.0.0.1 --directory dist"
   },
   "devDependencies": {
     "linkedom": "0.18.12"

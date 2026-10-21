@@ -2,3 +2,5 @@
 lab-three.js linguist-vendored -whitespace
 lab-ubuntu-wallpaper-license.txt -whitespace
 lab-yaru-license.txt -whitespace
+orbit/assets/** linguist-vendored -whitespace
+portfolio/media/** binary

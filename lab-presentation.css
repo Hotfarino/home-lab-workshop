@@ -18,3 +18,9 @@ body.workshop-shell.laptop-configuration .workspace{display:block!important}body
 
 /* Dedicated project source link stays available without opening the wider study hub. */
 .topbar .project-source{display:inline-flex;align-items:center;justify-content:center;min-height:40px;padding:8px 12px;border:1px solid #d9e2ed;border-radius:8px;font-size:14px;font-weight:600;white-space:nowrap;text-decoration:none;color:#38516b;background:#fff}.topbar .project-source:hover{background:#edf5ff;border-color:#78a8e7}@media(max-width:800px){.topbar .project-source{flex:1}}
+
+/* Keep portfolio navigation readable when the workbench header wraps. */
+@media(max-width:680px){
+ .workshop-shell .topbar>button,
+ .workshop-shell .topbar>.project-source{flex:1 1 140px;min-width:0;white-space:normal;overflow-wrap:normal}
+}
