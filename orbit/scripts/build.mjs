@@ -1,7 +1,7 @@
 import {mkdir,copyFile,readdir,readFile,stat,writeFile,rm} from 'node:fs/promises';
 import {createHash} from 'node:crypto';
 import path from 'node:path';
-const files=['index.html','style.css','app.js','code-results.js','packet-core.js','packet-curriculum.js','packet-progress.js','packet-os.js','packet-blocks.js','packet-blocks.css','engine.js','curriculum.js','world.js','python.js','python-worker.js','storage.js','desktop-model.js','desktop.js','assistant.js','depth-curriculum.js','desktop.css','pipeline.js','powershell-depth.js','network-game.js','network-walkthrough.js','arcade.js','arcade.css','rescue-model.js','packet-rescue.js','packet-rescue.css','packet-delivery.css','packet-delivery.js','delivery-model.js','repair-model.js','packet-repair.js','packet-repair.css'];
+const files=['index.html','style.css','app.js','code-results.js','block-board.js','block-play.js','packet-core.js','packet-curriculum.js','packet-progress.js','packet-os.js','packet-blocks.js','packet-blocks.css','engine.js','curriculum.js','world.js','python.js','python-worker.js','storage.js','desktop-model.js','desktop.js','assistant.js','depth-curriculum.js','desktop.css','pipeline.js','powershell-depth.js','network-game.js','network-walkthrough.js','arcade.js','arcade.css','rescue-model.js','packet-rescue.js','packet-rescue.css','packet-delivery.css','packet-delivery.js','delivery-model.js','repair-model.js','packet-repair.js','packet-repair.css'];
 const source=new Map(await Promise.all(files.map(async f=>[f,await readFile(f,'utf8')])));
 const revision=createHash('sha256').update([...source.values()].join('\n')).digest('hex').slice(0,12);
 await rm('dist',{recursive:true,force:true});
