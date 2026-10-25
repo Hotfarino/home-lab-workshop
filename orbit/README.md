@@ -185,3 +185,8 @@ The fault model assumes two Ethernet LANs, a working router, cables, switches, r
 Network Repair automated coverage adds eight model tests and a screen-transition regression test (56 total), including all 256 host-octet candidates, fault/remix correctness, gateway edge cases, wrong-mask connectivity versus configuration accuracy, malformed inputs, pending edits, forged completion, progress migration and duplicate-credit prevention.
 
 Browser QA completed all six repairs, including partial repairs that must fail, a pingable non-routing gateway, invalid input, alternate valid IPs, slash-mask normalization, progressive hints, pause/step/stop, reset, saved drafts, reload, search and switching between Delivery and Repair. The 390 px layout has no document-wide horizontal overflow; the diagram scrolls and follows the packet. Guided playback gives extra reading time. A reset clears the current success display while preserving previously earned mission credit.
+
+### Bit Builder block puzzle
+Packet Blocks now opens an 8×8 placement game with three-piece trays. Each row represents an eight-bit number. Matching the highlighted row to its decimal target delivers a packet; complete rows and columns award puzzle bonuses. Column clears are game mechanics, not a representation of network forwarding. Learn mode provides explanations, undo and target-row clearing. Arcade disables those recovery tools. Existing campaign lessons are available through Learning missions and retain their separate progress. The new board saves locally under `orbit-packet-play-v1`.
+
+Validation includes bounds/overlap checks, simultaneous line clears, binary target delivery, corrupt save recovery, and 10,000 simulated placements with save/restore checks.

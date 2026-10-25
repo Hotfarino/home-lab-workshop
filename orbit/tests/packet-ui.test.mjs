@@ -1,5 +1,5 @@
 import test from 'node:test';import assert from 'node:assert/strict';import {parseHTML} from 'linkedom';
-import {createPacketBlocks} from '../packet-blocks.js';import {PROGRESS_KEY} from '../packet-progress.js';
+import {createPacketCampaign as createPacketBlocks} from '../packet-blocks.js';import {PROGRESS_KEY} from '../packet-progress.js';
 test('UI smoke and stress: listener reuse, keyboard fallback, interrupted animation, exact credit and legacy callbacks',()=>{
  const {document,window}=parseHTML('<html><body><a class="skip"></a><div id="root"></div><aside id="coach"></aside><dialog id="modal"><div id="modalBody"></div></dialog></body></html>');
  const keys=['document','window','localStorage','matchMedia'],before=Object.fromEntries(keys.map(k=>[k,globalThis[k]])),data=new Map();Object.assign(globalThis,{document,window,localStorage:{getItem:k=>data.get(k),setItem:(k,v)=>data.set(k,v)},matchMedia:()=>({matches:false})});document.querySelector('#modal').close=()=>{};const root=document.querySelector('#root');let legacy=0,rescue=0;
